@@ -24,5 +24,7 @@ namespace CayirliFM.EntityLayer.Contrete
         public string EmployeeEMail { get; set; }
         public bool OurTeam {  get; set; }
         public string Status { get; set; }
+
+        public ICollection<News> News { get; set; }
     }
 }

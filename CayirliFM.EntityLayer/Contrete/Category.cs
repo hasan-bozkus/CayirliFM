@@ -17,5 +17,7 @@ namespace CayirliFM.EntityLayer.Contrete
         public DateTime CategoryUpdatedAtTime { get; set; }
         public bool CategoryStatus { get; set; }
 
+        public List<News> News { get; set; }
+
     }
 }

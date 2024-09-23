@@ -25,4 +25,8 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CayirliFM.EntityLayer\CayirliFM.EntityLayer.csproj" />
+  </ItemGroup>
+
 </Project>

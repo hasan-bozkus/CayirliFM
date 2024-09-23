@@ -16,5 +16,8 @@ namespace CayirliFM.EntityLayer.Contrete
         public string Message { get; set; }
         public DateTime CommentCreateAtTime { get; set; }
         public bool Status { get; set; }
+
+        public int NewsID { get; set; }
+        public News News { get; set; }
     }
 }

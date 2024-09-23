@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CayirliFM.DataAccessLayer\CayirliFM.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\CayirliFM.EntityLayer\CayirliFM.EntityLayer.csproj" />
+  </ItemGroup>
+
 </Project>

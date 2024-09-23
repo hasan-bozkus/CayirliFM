@@ -20,5 +20,13 @@ namespace CayirliFM.EntityLayer.Contrete
         public DateTime NewsUpdatedAtTime { get; set; }
         public string NewsStatus { get; set; }
 
+        public int CategoryID { get; set; }
+        public Category Category { get; set; }
+
+        public int EmployeeID { get; set; }
+        public Employee Employee { get; set; }
+
+        public ICollection<Comment> Comments { get; set; }
+
     }
 }
