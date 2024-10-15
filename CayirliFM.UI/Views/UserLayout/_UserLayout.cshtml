@@ -1,0 +1,207 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Html.PartialAsync("HeadPartial.cshtml")
+<body>
+    <!-- banner start here -->
+    <div class="agileinfo-main">
+        <div class="slider">
+            <script src="js/responsiveslides.min.js"></script>
+            <script>
+                // You can also use "$(window).load(function() {"
+                $(function () {
+                    // Slideshow 1
+                    $("#slider1").responsiveSlides({
+                        auto: true,
+                        nav: true,
+                        speed: 500,
+                        namespace: "callbacks",
+                    });
+                });
+            </script>
+            <ul class="rslides" id="slider1">
+                <li>
+                    <div class="banner">
+                        <h3>Duis euismod massa ut sem fringilla blandit. Proin vel enim nec ipsum finibus. </h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="banner banner2">
+                        <h3>Proin vel enim nec ipsum finibus. Duis euismod massa ut sem fringilla blandit. </h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="banner banner3">
+                        <h3>Sem fringilla blandit duis euismod massa ut . Proin vel enim nec ipsum finibus. </h3>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        @await Html.PartialAsync("HeaderPartial.cshtml")
+
+        <!-- navigation start here -->
+        @await Html.PartialAsync("NavbarPartial.cshtml")
+    </div>
+    <!-- navigation end here -->
+    <!-- banner end here -->
+    <div class="banner-w3bottom">
+        <div class="container">
+            <div class="banner-w3bottom-row">
+                <div class="col-md-4 col-sm-4 col-xs-4 w3ls-bnrgrids">
+                    <div class="col-md-4 w3ls-bnrgrids-left">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-8 w3ls-bnrgrids-right">
+                        <h4>Phasellus fermentum</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 w3ls-bnrgrids">
+                    <div class="col-md-4 w3ls-bnrgrids-left">
+                        <i class="fa fa-film" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-8 w3ls-bnrgrids-right">
+                        <h4>Nullam sodales suscipit </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 w3ls-bnrgrids">
+                    <div class="col-md-4 w3ls-bnrgrids-left">
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-8 w3ls-bnrgrids-right">
+                        <h4>Vestibulum a facilisis</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- //banner end here -->
+    <!-- welcome -->
+    <div class="welcome agileits">
+        <div class="container">
+            <h2 class="agile-title">Welcome To Our Site</h2>
+            @RenderBody()
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra auctor dolor, id egestas felis tristique vel. Donec malesuada, lorem sed vulputate tincidunt, nulla quam pulvinar mi, blandit placerat odio neque quis risus. Nullam ultricies erat non lectus aliquam, eu finibus neque semper. Morbi viverra, neque sit amet pretium blandit, dui mauris lacinia metus, a rhoncus erat ipsum vitae augue. Morbi laoreetvenenatis nulla, et venenatis purus scelerisque id. Vestibulum non facilisis lectus, quis accumsan mi.</p>
+            <div class="welcome-agileinfo">
+                <div class="col-md-6 col-sm-6 col-xs-6 welcome-grids">
+                    <div class="view view-w3-agile">
+                        <img src="images/img1.jpg" alt="" class="img-responsive" />
+                        <div class="agileits-w3layouts-mask">
+                            <h4>Our New Albums</h4>
+                            <p>Nullam ut nibh dapibus elit placerat ullamcorper</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 welcome-grids">
+                    <div class="view view-w3-agile">
+                        <img src="images/img2.jpg" alt="" class="img-responsive" />
+                        <div class="agileits-w3layouts-mask">
+                            <h4>Letraset sheets</h4>
+                            <p>Nullam ut nibh dapibus elit placerat ullamcorper</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- //welcome -->
+    <!-- events -->
+    <div class="events">
+        <div class="container">
+            <h3 class="agile-title">Events</h3>
+            <div class="events-info">
+                <div class="col-md-6 event-grids">
+                    <div class="w3layouts-text">
+                        <h4>10<span>Nov</span></h4>
+                        <h6><a href="single.html">Sed ut perspiciatis unde omnis </a></h6>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <p>Kasertas lertyasea deeraeser miasera lertasa ritise doloert ferdas caplicabo nerafaes asety u lasec vaserat. nikertyade asetkertyptaiades goertayse.nikertyade asetkertyptaiades goertayse</p>
+                </div>
+                <div class="col-md-6 event-grids">
+                    <div class="w3layouts-text">
+                        <h4>20<span>Dec</span></h4>
+                        <h6><a href="single.html">Voluptatem accusantium doloremque </a></h6>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <p>Kasertas lertyasea deeraeser miasera lertasa ritise doloert ferdas caplicabo nerafaes asety u lasec vaserat. nikertyade asetkertyptaiades goertayse.nikertyade asetkertyptaiades goertayse</p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- //events -->
+    <!--- albums -->
+    <div class="albums">
+        <div class="container">
+            <h3 class="agile-title">New Albums</h3>
+            <div class="col-md-6 w3lsalbums-grid">
+                <div class="albums-left">
+                    <div class="wthree-almub">
+                    </div>
+                </div>
+                <div class="albums-right">
+                    <h4>Dolor Sit</h4>
+                    <p>Nsatolernatur auts oditaut miertase vertas.Measnseqe ustur magni dolores eoqus ratione voluptate.</p>
+                    <a class="w3more" href="single.html"><i class="fa fa-mail-forward" aria-hidden="true"></i> More</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-6 w3lsalbums-grid">
+                <div class="albums-left">
+                    <div class="wthree-almub wthree-almub2">
+                    </div>
+                </div>
+                <div class="albums-right">
+                    <h4>Consequat</h4>
+                    <p>Nsatolernatur auts oditaut miertase vertas.Measnseqe ustur magni dolores eoqus ratione voluptate.</p>
+                    <a class="w3more" href="single.html"><i class="fa fa-mail-forward" aria-hidden="true"></i> More</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-6 w3lsalbums-grid">
+                <div class="albums1-right">
+                    <div class="wthree-almub wthree-almub3">
+                    </div>
+                </div>
+                <div class="albums1-left">
+                    <h4>Dolores Btrs</h4>
+                    <p>Nsatolernatur auts oditaut miertase vertas.Measnseqe ustur magni dolores eoqus ratione voluptate.</p>
+                    <a class="w3more" href="single.html"><i class="fa fa-mail-forward" aria-hidden="true"></i> More</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-6 w3lsalbums-grid">
+                <div class="albums1-right">
+                    <div class="wthree-almub wthree-almub4">
+                    </div>
+                </div>
+                <div class="albums1-left">
+                    <h4>Nam aliquam</h4>
+                    <p>Nsatolernatur auts oditaut miertase vertas.Measnseqe ustur magni dolores eoqus ratione voluptate.</p>
+                    <a class="w3more" href="single.html"><i class="fa fa-mail-forward" aria-hidden="true"></i> More</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!--- //albums -->
+    <!-- footer start here -->
+    @await Html.PartialAsync("FooterPartial.cshtml")
+    @await Html.PartialAsync("ScriptPartial.cshtml")
+</body>
+</html>
+
+@RenderSection("Scripts", false)
