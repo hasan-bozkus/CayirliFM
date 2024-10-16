@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/UserLayout/_UserLayout.cshtml";
+}
+
+    <!-- welcome -->
+    @await Html.PartialAsync("WelcomePartial.cshtml")
+    <!-- //welcome -->
+    <!-- events -->
+   @await Html.PartialAsync("EventPartial.cshtml")
+    <!-- //events -->
+    <!--- albums -->
+    @await Html.PartialAsync("AlbumsPartial.cshtml")
+    <!--- //albums -->
+
