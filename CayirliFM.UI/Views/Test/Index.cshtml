@@ -1,0 +1,25 @@
+﻿@model List<CayirliFM.EntityLayer.Contrete.Category>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kategori Adı</th>
+        <th>Kategori Durumu</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryID</td>
+            <td>@item.CategoryName</td>
+            <td>@item.CategoryStatus</td>
+        </tr>
+    }
+</table>
+
+<a href="/Test/CreateTest" class="btn btn-success">Kategori Ekle</a>
