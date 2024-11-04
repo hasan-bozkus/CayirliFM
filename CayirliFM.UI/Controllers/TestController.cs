@@ -34,5 +34,29 @@ namespace CayirliFM.UI.Controllers
             _categoryService.TCraete(category);
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> DeleteTest(int id)
+        {
+            var result = await _categoryService.TGetById(id);
+            _categoryService.TDelete(result);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> UpdateTest(int id)
+        {
+            var result = await _categoryService.TGetById(id);
+            return View(result);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateTest(Category category)
+        {
+            category.CategoryUpdatedAtTime = DateTime.Parse(DateTime.Now.ToString());
+            category.CategoryCreatedAtTime = DateTime.Parse(DateTime.Now.ToString());
+            category.CategoryStatus = true;
+            _categoryService.TUpdate(category);
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace CayirliFM.BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public void TDelete(int id)
+        public void TDelete(Strategy t)
         {
             throw new NotImplementedException();
         }

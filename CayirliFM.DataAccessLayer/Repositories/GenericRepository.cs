@@ -24,9 +24,9 @@ namespace CayirliFM.DataAccessLayer.Repositories
 			_context.SaveChanges();
 		}
 
-		public void Delete(int id)
+		public void Delete(T t)
 		{
-			_context.Remove(id);
+			_context.Remove(t);
 			_context.SaveChanges();
 		}
 

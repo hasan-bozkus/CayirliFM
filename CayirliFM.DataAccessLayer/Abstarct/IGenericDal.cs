@@ -10,7 +10,7 @@ namespace CayirliFM.DataAccessLayer.Abstarct
 	{
 		void Craete(T t);
 		void Update(T t);
-		void Delete(int id);
+		void Delete(T t);
 		Task<List<T>> GetListAll();
 		Task<T> GetById(int id);
 	}

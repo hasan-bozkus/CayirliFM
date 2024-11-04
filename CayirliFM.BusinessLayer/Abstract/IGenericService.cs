@@ -10,7 +10,7 @@ namespace CayirliFM.BusinessLayer.Abstract
     {
         void TCraete(T t);
         void TUpdate(T t);
-        void TDelete(int id);
+        void TDelete(T t);
         Task<List<T>> TGetListAll();
         Task<T> TGetById(int id);
     }

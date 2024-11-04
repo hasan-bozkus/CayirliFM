@@ -22,9 +22,9 @@ namespace CayirliFM.BusinessLayer.Concrete
             _genericDal.Craete(t);
         }
 
-        public void TDelete(int id)
+        public void TDelete(T t)
         {
-            _genericDal.Delete(id);
+            _genericDal.Delete(t);
         }
 
         public Task<T> TGetById(int id)

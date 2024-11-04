@@ -26,4 +26,11 @@
     <ProjectReference Include="..\CayirliFM.EntityLayer\CayirliFM.EntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Test\UpdateTest.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
