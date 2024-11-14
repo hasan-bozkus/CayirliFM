@@ -10,7 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<Context>();
 
-builder.Services.AddScoped<IGenericDal<Category>, GenericRepository<Category>>();
 builder.Services.AddScoped<ICategoryDal, EfCategoryRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 

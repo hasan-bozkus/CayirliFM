@@ -1,0 +1,63 @@
+﻿@model List<Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+@section Scripts {
+    <!-- Datatable ~/focus-2 -->
+    <script src="~/focus-2/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/focus-2/js/plugins-init/datatables.init.js"></script>
+    <link href="~/focus-2/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Basic Datatable</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example" class="display" style="min-width: 845px">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Kategori Adı</th>
+                                <th>Ekleme Tarihi</th>
+                                <th>Durumu</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.CategoryID</td>
+                                    <td>@item.CategoryName</td>
+                                    <td>@item.CategoryCreatedAtTime</td>
+                                    <td>@item.CategoryStatus</td>
+                                    <td>Sil</td>
+                                    <td>Güncelle</td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>Kategori Adı</th>
+                                <th>Ekleme Tarihi</th>
+                                <th>Durumu</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -9,10 +9,38 @@ using System.Threading.Tasks;
 
 namespace CayirliFM.BusinessLayer.Concrete
 {
-    public class CategoryManager : GenericManager<Category>, ICategoryService
+    public class CategoryManager : ICategoryService
     {
-        public CategoryManager(IGenericDal<Category> genericDal) : base(genericDal)
+        private readonly ICategoryDal _categoryDal;
+
+        public CategoryManager(ICategoryDal categoryDal)
         {
+            _categoryDal = categoryDal;
+        }
+
+        public void TCraete(Category t)
+        {
+            _categoryDal.Craete(t);
+        }
+
+        public void TDelete(Category t)
+        {
+            _categoryDal.Delete(t);
+        }
+
+        public async Task<Category> TGetById(int id)
+        {
+            return await _categoryDal.GetById(id);
+        }
+
+        public async Task<List<Category>> TGetListAll()
+        {
+            return await _categoryDal.GetListAll();
+        }
+
+        public void TUpdate(Category t)
+        {
+            _categoryDal.Update(t);
         }
     }
 }
