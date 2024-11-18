@@ -1,4 +1,5 @@
 ﻿using CayirliFM.BusinessLayer.Abstract;
+using CayirliFM.EntityLayer.Contrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CayirliFM.UI.Areas.Admin.Controllers
@@ -17,6 +18,22 @@ namespace CayirliFM.UI.Areas.Admin.Controllers
         {
             var values = await _categoryService.TGetListAll();
             return View(values);
+        }
+
+        [HttpGet]
+        public IActionResult CreateCategory()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateCategory(Category category)
+        {
+            category.CategoryCreatedAtTime = DateTime.Parse(DateTime.Now.ToString());
+            category.CategoryUpdatedAtTime = DateTime.Parse(DateTime.Now.ToString());
+            category.CategoryStatus = true;
+            _categoryService.TCraete(category);
+            return RedirectToAction("Index");
         }
     }
 }
