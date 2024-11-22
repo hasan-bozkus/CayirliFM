@@ -26,6 +26,7 @@
                                 <th>#</th>
                                 <th>Kategori Adı</th>
                                 <th>Ekleme Tarihi</th>
+                                <th>Güncelleme Tarihi</th>
                                 <th>Durumu</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
@@ -38,9 +39,10 @@
                                     <td>@item.CategoryID</td>
                                     <td>@item.CategoryName</td>
                                     <td>@item.CategoryCreatedAtTime</td>
+                                    <td>@item.CategoryUpdatedAtTime</td>
                                     <td>@item.CategoryStatus</td>
-                                    <td>Sil</td>
-                                    <td>Güncelle</td>
+                                    <td><a href="/Admin/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-rounded btn-outline-danger">Sil</a></td>
+                                    <td><a href="/Admin/AdminCategory/UpdateCategory/@item.CategoryID" class="btn btn-rounded btn-outline-warning">Güncelle</a></td>
                                 </tr>
                             }
                         </tbody>
@@ -49,6 +51,7 @@
                                 <th>#</th>
                                 <th>Kategori Adı</th>
                                 <th>Ekleme Tarihi</th>
+                                <th>Güncelleme Tarihi</th>
                                 <th>Durumu</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
