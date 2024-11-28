@@ -13,6 +13,9 @@ builder.Services.AddDbContext<Context>();
 builder.Services.AddScoped<ICategoryDal, EfCategoryRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 
+builder.Services.AddScoped<IAboutDal, EfAboutRepository>();
+builder.Services.AddScoped<IAboutService, AboutManager>();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
