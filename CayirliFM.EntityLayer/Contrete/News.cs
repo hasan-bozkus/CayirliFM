@@ -23,10 +23,10 @@ namespace CayirliFM.EntityLayer.Contrete
         public int CategoryID { get; set; }
         public Category Category { get; set; }
 
-        public int EmployeeID { get; set; }
-        public Employee Employee { get; set; }
+        public int? EmployeeID { get; set; }
+        public Employee ? Employee { get; set; }
 
-        public ICollection<Comment> Comments { get; set; }
+        public ICollection<Comment> ? Comments { get; set; }
 
     }
 }

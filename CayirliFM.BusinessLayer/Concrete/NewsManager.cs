@@ -1,4 +1,5 @@
 ﻿using CayirliFM.BusinessLayer.Abstract;
+using CayirliFM.DataAccessLayer.Abstarct;
 using CayirliFM.EntityLayer.Contrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,37 @@ namespace CayirliFM.BusinessLayer.Concrete
 {
     public class NewsManager : INewsService
     {
+
+        private readonly INewsDal _newsDal;
+
+        public NewsManager(INewsDal newsDal)
+        {
+            _newsDal = newsDal;
+        }
+
         public void TCraete(News t)
         {
-            throw new NotImplementedException();
+            _newsDal.Craete(t);
         }
 
         public void TDelete(News t)
         {
-            throw new NotImplementedException();
+            _newsDal.Delete(t);
         }
 
         public Task<News> TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _newsDal.GetById(id);
         }
 
         public Task<List<News>> TGetListAll()
         {
-            throw new NotImplementedException();
+            return _newsDal.GetListAll();
         }
 
         public void TUpdate(News t)
         {
-            throw new NotImplementedException();
+            _newsDal.Update(t);
         }
     }
 }

@@ -1,0 +1,71 @@
+﻿@model List<News>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+@section Scripts {
+    <!-- Datatable ~/focus-2 -->
+    <script src="~/focus-2/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/focus-2/js/plugins-init/datatables.init.js"></script>
+    <link href="~/focus-2/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Basic Datatable</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example" class="display" style="min-width: 845px">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Haber Adı</th>
+                                <th>Önizleme Yazısı</th>
+                                <th>Ekleme Tarihi</th>
+                                <th>Güncelleme Tarihi</th>
+                                <th>Kategori</th>
+                                <th>Durumu</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.NewsID</td>
+                                    <td>@item.NewsTitle</td>
+                                    <td>@item.NewsSubDescrpition</td>
+                                    <td>@item.NewsCreatedAtTime</td>
+                                    <td>@item.NewsUpdatedAtTime</td>
+                                    <td>@item.NewsStatus</td>
+                                    <td><a href="/Admin/AdminNews/DeleteNews/@item.NewsID" class="btn btn-rounded btn-outline-danger">Sil</a></td>
+                                    <td><a href="/Admin/AdminNews/UpdateNews/@item.NewsID" class="btn btn-rounded btn-outline-warning">Güncelle</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>Haber Adı</th>
+                                <th>Önizleme Yazısı</th>
+                                <th>Ekleme Tarihi</th>
+                                <th>Güncelleme Tarihi</th>
+                                <th>Kategori</th>
+                                <th>Durumu</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -16,6 +16,9 @@ builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<IAboutDal, EfAboutRepository>();
 builder.Services.AddScoped<IAboutService, AboutManager>();
 
+builder.Services.AddScoped<INewsDal, EfNewsRepository>();
+builder.Services.AddScoped<INewsService, NewsManager>();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

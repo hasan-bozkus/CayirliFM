@@ -1,0 +1,48 @@
+﻿@model News
+@{
+    ViewData["Title"] = "CreateNews";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-12 col-xxl-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Yeni Haber Ekle</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form method="post">
+
+                        <input type="hidden" asp-for="NewsID" />
+
+                        <div class="form-group">
+                            <input type="text" asp-for="NewsTitle" class="form-control input-rounded " placeholder="Haber Adı">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" asp-for="NewsSubImage" class="form-control input-rounded " placeholder="Haber Küçük Görseli">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" asp-for="NewsImage" class="form-control input-rounded " placeholder="Haber Görseli">
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" asp-for="NewsSubDescrpition" class="form-control input-default" placeholder="Haber Kısa Açıklaması"> </textarea>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="15" asp-for="NewsDescription" class="form-control input-default" placeholder="Haber Açıklaması"> </textarea>
+                        </div>
+                        <div class="form-group">
+                            @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.categoryList, new { @Class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <input type="datetime" asp-for="NewsCreatedAtTime" value="@Model.NewsCreatedAtTime" class="form-control input-rounded" />
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-outline-primary">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
