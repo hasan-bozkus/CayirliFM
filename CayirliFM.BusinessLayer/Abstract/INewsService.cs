@@ -9,5 +9,8 @@ namespace CayirliFM.BusinessLayer.Abstract
 {
     public interface INewsService : IGenericService<News>
     {
+        Task<List<News>> TGetListNewsWithCategoryAsync();
+        void TChangeNewsStatusToApproved(int id);
+        void TChangeNewsStatusToNotApproved(int id);
     }
 }

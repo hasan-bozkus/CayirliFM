@@ -19,6 +19,16 @@ namespace CayirliFM.BusinessLayer.Concrete
             _newsDal = newsDal;
         }
 
+        public void TChangeNewsStatusToApproved(int id)
+        {
+            _newsDal.ChangeNewsStatusToApproved(id);
+        }
+
+        public void TChangeNewsStatusToNotApproved(int id)
+        {
+            _newsDal.ChangeNewsStatusToNotApproved(id);
+        }
+
         public void TCraete(News t)
         {
             _newsDal.Craete(t);
@@ -37,6 +47,11 @@ namespace CayirliFM.BusinessLayer.Concrete
         public Task<List<News>> TGetListAll()
         {
             return _newsDal.GetListAll();
+        }
+
+        public async Task<List<News>> TGetListNewsWithCategoryAsync()
+        {
+            return await _newsDal.GetListNewsWithCategoryAsync();
         }
 
         public void TUpdate(News t)

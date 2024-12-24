@@ -30,6 +30,7 @@
                                 <th>Güncelleme Tarihi</th>
                                 <th>Kategori</th>
                                 <th>Durumu</th>
+                                <th>İşlem</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
                             </tr>
@@ -44,6 +45,18 @@
                                     <td>@item.NewsCreatedAtTime</td>
                                     <td>@item.NewsUpdatedAtTime</td>
                                     <td>@item.NewsStatus</td>
+                                    <td>@item.CategoryName</td>
+                                    <td>
+                                        @if (item.NewsStatus == "Onay Bekliyor" || item.NewsStatus == "Onaylanmadı")
+                                        {
+                                            <a href="/Admin/AdminNews/ChangeNewsStatusToApproved/@item.NewsID" class="btn btn-rounded btn-outline-success">Onayla</a>
+                                        }
+                                        @if(item.NewsStatus == "Onaylandı")
+                                        {
+                                            <a href="/Admin/AdminNews/ChangeNewsStatusToNotApproved/@item.NewsID" class="btn btn-rounded btn-outline-dark">Onaylamayı Reddet</a>
+                                        }
+                                        
+                                    </td>
                                     <td><a href="/Admin/AdminNews/DeleteNews/@item.NewsID" class="btn btn-rounded btn-outline-danger">Sil</a></td>
                                     <td><a href="/Admin/AdminNews/UpdateNews/@item.NewsID" class="btn btn-rounded btn-outline-warning">Güncelle</a></td>
                                 </tr>
@@ -58,6 +71,7 @@
                                 <th>Güncelleme Tarihi</th>
                                 <th>Kategori</th>
                                 <th>Durumu</th>
+                                <th>İşlem</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
                             </tr>

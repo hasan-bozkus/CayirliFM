@@ -19,7 +19,7 @@ namespace CayirliFM.UI.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var values = await _newsService.TGetListAll();
+            var values = await _newsService.TGetListNewsWithCategoryAsync();
             return View(values);
         }
 
@@ -78,6 +78,18 @@ namespace CayirliFM.UI.Areas.Admin.Controllers
             news.NewsStatus = "Onay Bekliyor";
             news.EmployeeID = 1;
             _newsService.TUpdate(news);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult ChangeNewsStatusToApproved(int id)
+        {
+            _newsService.TChangeNewsStatusToApproved(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult ChangeNewsStatusToNotApproved(int id)
+        {
+            _newsService.TChangeNewsStatusToNotApproved(id);
             return RedirectToAction("Index");
         }
     }

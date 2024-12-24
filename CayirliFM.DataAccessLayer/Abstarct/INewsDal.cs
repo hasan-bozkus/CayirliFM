@@ -9,5 +9,8 @@ namespace CayirliFM.DataAccessLayer.Abstarct
 {
     public interface INewsDal : IGenericDal<News>
     {
+        Task<List<News>> GetListNewsWithCategoryAsync();
+        void ChangeNewsStatusToApproved(int id);
+        void ChangeNewsStatusToNotApproved(int id);
     }
 }
