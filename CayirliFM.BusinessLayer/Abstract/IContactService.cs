@@ -9,5 +9,6 @@ namespace CayirliFM.BusinessLayer.Abstract
 {
     public interface IContactService : IGenericService<Contact>
     {
+        Task<List<Contact>> TContactListOrdByDescAsync();
     }
 }

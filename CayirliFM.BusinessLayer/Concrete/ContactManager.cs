@@ -1,4 +1,5 @@
 ﻿using CayirliFM.BusinessLayer.Abstract;
+using CayirliFM.DataAccessLayer.Abstarct;
 using CayirliFM.EntityLayer.Contrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,41 @@ namespace CayirliFM.BusinessLayer.Concrete
 {
     public class ContactManager : IContactService
     {
+        private readonly IContactDal _contactDal;
+
+        public ContactManager(IContactDal contactDal)
+        {
+            _contactDal = contactDal;
+        }
+
+        public async Task<List<Contact>> TContactListOrdByDescAsync()
+        {
+            return await _contactDal.ContactListOrdByDescAsync();
+        }
+
         public void TCraete(Contact t)
         {
-            throw new NotImplementedException();
+            _contactDal.Craete(t);
         }
 
         public void TDelete(Contact t)
         {
-            throw new NotImplementedException();
+            _contactDal.Delete(t);
         }
 
-        public Task<Contact> TGetById(int id)
+        public async Task<Contact> TGetById(int id)
         {
-            throw new NotImplementedException();
+            return await _contactDal.GetById(id);
         }
 
         public Task<List<Contact>> TGetListAll()
         {
-            throw new NotImplementedException();
+            return _contactDal.GetListAll();
         }
 
         public void TUpdate(Contact t)
         {
-            throw new NotImplementedException();
+            _contactDal.Update(t);
         }
     }
 }

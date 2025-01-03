@@ -9,5 +9,6 @@ namespace CayirliFM.DataAccessLayer.Abstarct
 {
     public interface IContactDal : IGenericDal<Contact>
     {
+        Task<List<Contact>> ContactListOrdByDescAsync();
     }
 }
