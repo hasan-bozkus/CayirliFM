@@ -18,5 +18,23 @@ namespace CayirliFM.UI.Areas.Admin.Controllers
             var values = await _contactService.TContactListOrdByDescAsync();
             return View(values);
         }
+
+        public async Task<IActionResult> GetContact(int id)
+        {
+            var values = await _contactService.TGetById(id);
+            return View(values);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ReplyToContact(int id)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ReplyToContact()
+        {
+            return View();
+        }
     }
 }
