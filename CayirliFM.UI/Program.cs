@@ -22,6 +22,11 @@ builder.Services.AddScoped<INewsService, NewsManager>();
 builder.Services.AddScoped<IContactDal, EfContactRepository>();
 builder.Services.AddScoped<IContactService, ContactManager>();
 
+builder.Services.AddScoped<IReplyToContactDal, EfReplyToContactRepository>();
+builder.Services.AddScoped<IReplyToContactService, ReplyToContactManager>();
+
+builder.Services.AddAutoMapper(typeof(Program));
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

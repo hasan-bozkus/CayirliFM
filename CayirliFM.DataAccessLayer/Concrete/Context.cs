@@ -26,6 +26,7 @@ namespace CayirliFM.DataAccessLayer.Concrete
         public DbSet<SocialMediaAccounts> SocialMediaAccounts { get; set; }
         public DbSet<Strategy> Strategies { get; set; }
         public DbSet<WelcomeToOurSite> WelcomeToOurSites { get; set; }
+        public DbSet<ReplyToContact> ReplyToContacts { get; set; }
 
     }
 }

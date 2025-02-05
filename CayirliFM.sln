@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CayirliFM.DataAccessLayer",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CayirliFM.BusinessLayer", "CayirliFM.BusinessLayer\CayirliFM.BusinessLayer.csproj", "{3CE7C046-4D32-40B8-BDEA-6515B77DE635}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CayirliFM.DtoLayer", "CayirliFM.DtoLayer\CayirliFM.DtoLayer.csproj", "{214A1D70-4A4B-4516-8B85-8F3E9D2D3F8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3CE7C046-4D32-40B8-BDEA-6515B77DE635}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CE7C046-4D32-40B8-BDEA-6515B77DE635}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CE7C046-4D32-40B8-BDEA-6515B77DE635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{214A1D70-4A4B-4516-8B85-8F3E9D2D3F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{214A1D70-4A4B-4516-8B85-8F3E9D2D3F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{214A1D70-4A4B-4516-8B85-8F3E9D2D3F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{214A1D70-4A4B-4516-8B85-8F3E9D2D3F8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
