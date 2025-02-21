@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CayirliFM.DtoLayer.Dtos
+namespace CayirliFM.DtoLayer.Dtos.ContactDtos
 {
     public class CreateReplyToContactDto
     {

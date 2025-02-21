@@ -1,9 +1,7 @@
-﻿@model List<Contact>
+﻿@model List<ResultReplyToContactWithDescDto>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "GetReplyToContacts";
     Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
-    int count = 0;
-    string status = "";
 }
 
 <div class="container-fluid">
@@ -14,7 +12,7 @@
                 <div class="card-body">
                     <div class="email-left-box px-0 mb-5">
                         @await Component.InvokeAsync("_AdminPrimaryContact")
-                        @await Component.InvokeAsync("_AdminCategoriesContact")                       
+                        @await Component.InvokeAsync("_AdminCategoriesContact")
                     </div>
                     <div class="email-right-box ml-0 ml-sm-4 ml-sm-0">
                         <div role="toolbar" class="toolbar ml-4 ml-sm-0">
@@ -38,32 +36,22 @@
                         </div>
                         <div class="email-list mt-4">
                             @foreach (var item in Model)
-                            { 
-                                @if(item.Status == true)
-                                {
-                                    status = "unread";
-                                }
-                                @if(item.Status == false)
-                                {
-                                    status = "read";
-                                }
-
-                                <div class="message @status">
+                            {
+                                <div class="message unread">
                                     <div>
                                         <div class="d-flex message-single">
                                             <div class="custom-control custom-checkbox pl-4">
                                                 <input type="checkbox">
                                             </div>
                                             <div class="ml-2">
-                                                <a href="/Admin/AdminContact/DeleteContact/@item.ContactID" class="border-0 bg-transparent align-middle p-0">
-                                                    <i class="fa fa-trash"></i>
-                                                </a>
+                                                <button class="border-0 bg-transparent align-middle p-0">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                </button>
                                             </div>
-                                            
                                         </div>
-                                        <a href="/Admin/AdminContact/GetContact/@item.ContactID" class="col-mail col-mail-2">
-                                            <div class="subject">@item.ContactSubject </div>
-                                            <div class="date">@item.ContactCreateAtTime</div>
+                                        <a href="/Admin/AdminContact/GetReplyToContact/@item.ReplyToContactID" class="col-mail col-mail-2">
+                                            <div class="subject">@item.ReceiverEmail @item.Subject</div>
+                                            <div class="date">@(((DateTime)item.SendingDate).ToString("dd-MMM-yyyy"))</div>
                                         </a>
                                     </div>
                                 </div>
@@ -94,4 +82,3 @@
     </div>
 
 </div>
-

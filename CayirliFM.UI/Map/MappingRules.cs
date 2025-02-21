@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CayirliFM.DtoLayer.Dtos;
+using CayirliFM.DtoLayer.Dtos.ContactDtos;
 using CayirliFM.EntityLayer.Contrete;
 
 namespace CayirliFM.UI.Map

@@ -1,8 +1,10 @@
 ﻿using CayirliFM.DataAccessLayer.Abstarct;
 using CayirliFM.DataAccessLayer.Concrete;
 using CayirliFM.DataAccessLayer.Repositories;
+using CayirliFM.DtoLayer.Dtos.ContactDtos;
 using CayirliFM.EntityLayer.Contrete;
 using MailKit.Net.Smtp;
+using Microsoft.EntityFrameworkCore;
 using MimeKit;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,38 @@ namespace CayirliFM.DataAccessLayer.EntityFramework
     {
         public EfReplyToContactRepository(Context context) : base(context)
         {
+        }
+
+        public async Task<ResultGetReplyToContactDto> GetReplyToContact(int id)
+        {
+            using(var context = new Context())
+            {
+                var value = await context.ReplyToContacts.Where(x => x.ReplyToContactID == id).Select(y => new ResultGetReplyToContactDto
+                {
+                    ReplyToContactID = y.ReplyToContactID,
+                    Body = y.Body,
+                    ReceiverEmail = y.ReceiverEmail,
+                    SendingDate = y.SendingDate,
+                    Subject = y.Subject
+                }).FirstOrDefaultAsync();
+                return value;
+            }
+        }
+
+        public async Task<List<ResultReplyToContactWithDescDto>> GetReplyToContactsWithDesc()
+        {
+            using (var context = new Context())
+            {
+                var values = await context.ReplyToContacts.OrderByDescending(x => x.ReplyToContactID).Select(y => new ResultReplyToContactWithDescDto
+                {
+                    ReplyToContactID = y.ReplyToContactID,
+                    ReceiverEmail = y.ReceiverEmail,
+                    Subject = y.Subject,
+                    Body = y.Body,
+                    SendingDate = y.SendingDate
+                }).ToListAsync();
+                return values;
+            }
         }
 
         public async Task ReplyToContactForContactRequest(ReplyToContact replyToContact)

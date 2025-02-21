@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CayirliFM.DtoLayer\CayirliFM.DtoLayer.csproj" />
     <ProjectReference Include="..\CayirliFM.EntityLayer\CayirliFM.EntityLayer.csproj" />
   </ItemGroup>
 

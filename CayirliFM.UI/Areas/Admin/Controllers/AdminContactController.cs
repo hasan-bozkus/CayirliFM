@@ -1,8 +1,8 @@
 ﻿using CayirliFM.BusinessLayer.Abstract;
 using Microsoft.AspNetCore.Mvc;
-using CayirliFM.DtoLayer.Dtos;
 using AutoMapper;
 using CayirliFM.EntityLayer.Contrete;
+using CayirliFM.DtoLayer.Dtos.ContactDtos;
 
 namespace CayirliFM.UI.Areas.Admin.Controllers
 {
@@ -32,6 +32,13 @@ namespace CayirliFM.UI.Areas.Admin.Controllers
             return View(values);
         }
 
+        public async Task<IActionResult> DeleteContact(int id)
+        {
+            var result = await _contactService.TGetById(id);
+            _contactService.TDelete(result);
+            return RedirectToAction("Index");
+        }
+
         [HttpGet]
         public async Task<IActionResult> ReplyToContact(int id)
         {
@@ -48,6 +55,18 @@ namespace CayirliFM.UI.Areas.Admin.Controllers
             var result = _mapper.Map<ReplyToContact>(createReplyToContactDto);
             await _replyToContactService.TReplyToContactForContactRequest(result);
             return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> GetReplyToContacts()
+        {
+            var values = await _replyToContactService.TGetReplyToContactsWithDesc();
+            return View(values);
+        }
+
+        public async Task<IActionResult> GetReplyToContact(int id)
+        {
+            var value = await _replyToContactService.TGetReplyToContact(id);
+            return View(value);
         }
     }
 }
