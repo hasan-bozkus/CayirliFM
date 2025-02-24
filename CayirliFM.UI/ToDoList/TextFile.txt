@@ -1,0 +1,6 @@
+﻿Admin Contact
+	Gelen iletişim taleplerinin sayısı
+	Gönderilen cevapların sayısı
+
+Admin Strategy
+	Aktif Yap - Pasif Yap Durumları

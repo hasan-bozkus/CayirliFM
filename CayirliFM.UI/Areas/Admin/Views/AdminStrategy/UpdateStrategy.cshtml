@@ -1,0 +1,34 @@
+﻿@model UpdateStrategyDto
+@{
+    ViewData["Title"] = "UpdateStrategy";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-12 col-xxl-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Yeni Strateji Ekle</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form method="post">
+
+                        <input type="hidden" asp-for="StrategyID" />
+                        <input type="hidden" asp-for="StrategyStatus" />
+
+                        <div class="form-group">
+                            <input type="text" asp-for="StrategyTitle" class="form-control input-rounded " placeholder="Strateji Başlığı" />
+                        </div>
+                        <div class="form-group">
+                            <input type="number" asp-for="StrategyValue" class="form-control input-rounded " placeholder="Strateji Değeri" />
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-outline-primary">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

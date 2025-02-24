@@ -25,6 +25,9 @@ builder.Services.AddScoped<IContactService, ContactManager>();
 builder.Services.AddScoped<IReplyToContactDal, EfReplyToContactRepository>();
 builder.Services.AddScoped<IReplyToContactService, ReplyToContactManager>();
 
+builder.Services.AddScoped<IStartegyDal, EfStrategyRepository>();
+builder.Services.AddScoped<IStrategyService, StrategyManager>();
+
 builder.Services.AddAutoMapper(typeof(Program));
 
 // Add services to the container.

@@ -1,0 +1,73 @@
+﻿@model List<ResultStrategyDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+
+@section Scripts {
+    <!-- Datatable ~/focus-2 -->
+    <script src="~/focus-2/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/focus-2/js/plugins-init/datatables.init.js"></script>
+    <link href="~/focus-2/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Stratejilerimiz</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example" class="display" style="min-width: 845px">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Strateji Adı</th>
+                                <th>Öncelik Değeri</th>
+                                <th>Durumu</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+
+                                <tr>
+                                    <td>@count</td>
+                                    <td>@item.StrategyTitle</td>
+                                    <td>@item.StrategyValue</td>
+                                    @if (item.StrategyStatus == true)
+                                    {
+                                        <td><a href="/Admin/AdminStrategy/ChangeToFalse/@item.StrategyID" class="btn btn-rounded btn-outline-dark"> Pasif Yap</a></td>
+                                    }
+                                    @if(item.StrategyStatus == false)
+                                    {
+                                        <td><a href="/Admin/AdminStrategy/ChangeToTrue/@item.StrategyID" class="btn btn-rounded btn-outline-success"> Aktif Yap</a></td>
+                                    }
+                                    <td><a href="/Admin/AdminStrategy/DeleteStrategy/@item.StrategyID" class="btn btn-rounded btn-outline-danger">Sil</a></td>
+                                    <td><a href="/Admin/AdminStrategy/UpdateStrategy/@item.StrategyID" class="btn btn-rounded btn-outline-warning">Güncelle</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>Strateji Adı</th>
+                                <th>Öncelik Değeri</th>
+                                <th>Durumu</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <a href="/Admin/AdminStrategy/CreateStrategy" class="btn btn-rounded btn-outline-primary"> Yeni Strateji Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
