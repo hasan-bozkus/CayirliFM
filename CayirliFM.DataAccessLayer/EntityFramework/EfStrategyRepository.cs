@@ -15,5 +15,25 @@ namespace CayirliFM.DataAccessLayer.EntityFramework
         public EfStrategyRepository(Context context) : base(context)
         {
         }
+
+        public async Task ChangeToFalseWithStrategy(int id)
+        {
+            using (var context = new Context())
+            {
+                var result = await context.Strategies.FindAsync(id);
+                result.StrategyStatus = false;
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public async Task ChangeToTrueWithStrategy(int id)
+        {
+            using (var context = new Context())
+            {
+                var result = await context.Strategies.FindAsync(id);
+                result.StrategyStatus = true;
+                await context.SaveChangesAsync();
+            }
+        }
     }
 }

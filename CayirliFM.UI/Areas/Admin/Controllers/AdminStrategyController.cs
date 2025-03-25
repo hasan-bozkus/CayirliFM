@@ -60,5 +60,17 @@ namespace CayirliFM.UI.Areas.Admin.Controllers
             _strategyService.TUpdate(result);
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> ChangeToFalseWithStrategy(int id)
+        {
+            await _strategyService.TChangeToFalseWithStrategy(id);
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> ChangeToTrueWithStrategy(int id)
+        {
+            await _strategyService.TChangeToTrueWithStrategy(id);
+            return RedirectToAction("Index");
+        }
     }
 }

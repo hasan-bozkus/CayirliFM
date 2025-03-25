@@ -9,5 +9,7 @@ namespace CayirliFM.BusinessLayer.Abstract
 {
     public interface IStrategyService : IGenericService<Strategy>
     {
+        Task TChangeToTrueWithStrategy(int id);
+        Task TChangeToFalseWithStrategy(int id);
     }
 }

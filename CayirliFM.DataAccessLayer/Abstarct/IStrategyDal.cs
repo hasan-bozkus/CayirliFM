@@ -9,5 +9,7 @@ namespace CayirliFM.DataAccessLayer.Abstarct
 {
     public interface IStartegyDal : IGenericDal<Strategy>
     {
+        Task ChangeToTrueWithStrategy(int id);
+        Task ChangeToFalseWithStrategy(int id);
     }
 }

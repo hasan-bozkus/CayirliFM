@@ -1,0 +1,44 @@
+﻿@model CreateAddressDto
+@{
+    ViewData["Title"] = "CreateAdress";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-xl-12 col-xxl-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Yeni Adres Bilgisi Ekle</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form method="post">
+                        <div class="form-group">
+                            <input type="text" asp-for="EMail" class="form-control input-rounded " placeholder="E-Posta" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" asp-for="Phone" class="form-control input-rounded " placeholder="Telefon" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" asp-for="MapLocation" class="form-control input-rounded " placeholder="Harita Bilgisi" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" asp-for="Location" class="form-control input-rounded " placeholder="Konum" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" asp-for="SubLocation" class="form-control input-rounded " placeholder="Kısa Konum" />
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="10" cols="3" asp-for="Description" class="form-control input-default" placeholder="Açıklama"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-outline-primary">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

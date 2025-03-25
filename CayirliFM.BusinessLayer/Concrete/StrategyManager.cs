@@ -18,6 +18,16 @@ namespace CayirliFM.BusinessLayer.Concrete
             _startegyDal = startegyDal;
         }
 
+        public async Task TChangeToFalseWithStrategy(int id)
+        {
+            await _startegyDal.ChangeToFalseWithStrategy(id);
+        }
+
+        public async Task TChangeToTrueWithStrategy(int id)
+        {
+            await _startegyDal.ChangeToTrueWithStrategy(id);
+        }
+
         public void TCraete(Strategy t)
         {
             _startegyDal.Craete(t);

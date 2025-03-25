@@ -1,4 +1,4 @@
-﻿@model List<ResultStrategyDto>
+﻿@model List<ResultAddressDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
@@ -25,9 +25,9 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Strateji Adı</th>
-                                <th>Öncelik Değeri</th>
-                                <th>Durumu</th>
+                                <th>Kısa Konum</th>
+                                <th>E-Posta</th>
+                                <th>Telefon</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
                             </tr>
@@ -39,34 +39,27 @@
 
                                 <tr>
                                     <td>@count</td>
-                                    <td>@item.StrategyTitle</td>
-                                    <td>@item.StrategyValue</td>
-                                    @if (item.StrategyStatus == true)
-                                    {
-                                        <td><a href="/Admin/AdminStrategy/ChangeToFalseWithStrategy/@item.StrategyID" class="btn btn-rounded btn-outline-dark"> Pasif Yap</a></td>
-                                    }
-                                    @if(item.StrategyStatus == false)
-                                    {
-                                        <td><a href="/Admin/AdminStrategy/ChangeToTrueWithStrategy/@item.StrategyID" class="btn btn-rounded btn-outline-success"> Aktif Yap</a></td>
-                                    }
-                                    <td><a href="/Admin/AdminStrategy/DeleteStrategy/@item.StrategyID" class="btn btn-rounded btn-outline-danger">Sil</a></td>
-                                    <td><a href="/Admin/AdminStrategy/UpdateStrategy/@item.StrategyID" class="btn btn-rounded btn-outline-warning">Güncelle</a></td>
+                                    <td>@item.SubLocation</td>
+                                    <td>@item.EMail</td>
+                                    <td>@item.Phone</td>
+                                    <td><a href="/Admin/AdminAddress/DeleteAdress/@item.AddressID" class="btn btn-rounded btn-outline-danger">Sil</a></td>
+                                    <td><a href="/Admin/AdminAddress/UpdateAddress/@item.AddressID" class="btn btn-rounded btn-outline-warning">Güncelle</a></td>
                                 </tr>
                             }
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th>#</th>
-                                <th>Strateji Adı</th>
-                                <th>Öncelik Değeri</th>
-                                <th>Durumu</th>
+                                <th>Kısa Konum</th>
+                                <th>E-Posta</th>
+                                <th>Telefon</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
-                <a href="/Admin/AdminStrategy/CreateStrategy" class="btn btn-rounded btn-outline-primary"> Yeni Strateji Ekle</a>
+                <a href="/Admin/AdminAddress/CreateAdress" class="btn btn-rounded btn-outline-primary"> Yeni Adres Bilgisi Ekle</a>
             </div>
         </div>
     </div>

@@ -28,6 +28,10 @@ builder.Services.AddScoped<IReplyToContactService, ReplyToContactManager>();
 builder.Services.AddScoped<IStartegyDal, EfStrategyRepository>();
 builder.Services.AddScoped<IStrategyService, StrategyManager>();
 
+
+builder.Services.AddScoped<IAddressDal, EfAddressRepository>();
+builder.Services.AddScoped<IAddressService, AddressManager>();
+
 builder.Services.AddAutoMapper(typeof(Program));
 
 // Add services to the container.

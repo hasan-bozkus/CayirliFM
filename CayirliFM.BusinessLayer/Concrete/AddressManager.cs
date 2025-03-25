@@ -1,4 +1,5 @@
 ﻿using CayirliFM.BusinessLayer.Abstract;
+using CayirliFM.DataAccessLayer.Abstarct;
 using CayirliFM.EntityLayer.Contrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace CayirliFM.BusinessLayer.Concrete
 {
     public class AddressManager : IAddressService
     {
+        private readonly IAddressDal _addressDal;
+
+        public AddressManager(IAddressDal addressDal)
+        {
+            _addressDal = addressDal;
+        }
+
         public void TCraete(Address t)
         {
-            throw new NotImplementedException();
+            _addressDal.Craete(t);
         }
 
         public void TDelete(Address t)
         {
-            throw new NotImplementedException();
+            _addressDal.Delete(t);
         }
 
-        public Task<Address> TGetById(int id)
+        public async Task<Address> TGetById(int id)
         {
-            throw new NotImplementedException();
+            return await _addressDal.GetById(id);
         }
 
-        public Task<List<Address>> TGetListAll()
+        public async Task<List<Address>> TGetListAll()
         {
-            throw new NotImplementedException();
+            return await _addressDal.GetListAll();
         }
 
         public void TUpdate(Address t)
         {
-            throw new NotImplementedException();
+            _addressDal.Update(t);
         }
     }
 }
