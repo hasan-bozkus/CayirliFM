@@ -28,9 +28,11 @@ builder.Services.AddScoped<IReplyToContactService, ReplyToContactManager>();
 builder.Services.AddScoped<IStartegyDal, EfStrategyRepository>();
 builder.Services.AddScoped<IStrategyService, StrategyManager>();
 
-
 builder.Services.AddScoped<IAddressDal, EfAddressRepository>();
 builder.Services.AddScoped<IAddressService, AddressManager>();
+
+builder.Services.AddScoped<ISocialMediaAccountsDal, EfSocialMediaAccountsRepository>();
+builder.Services.AddScoped<ISocialMediaAccountsService, SocialMediaAccountsManager>();
 
 builder.Services.AddAutoMapper(typeof(Program));
 

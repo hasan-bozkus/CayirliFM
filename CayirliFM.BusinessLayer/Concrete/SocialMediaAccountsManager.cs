@@ -1,4 +1,5 @@
 ﻿using CayirliFM.BusinessLayer.Abstract;
+using CayirliFM.DataAccessLayer.Abstarct;
 using CayirliFM.EntityLayer.Contrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace CayirliFM.BusinessLayer.Concrete
 {
     public class SocialMediaAccountsManager : ISocialMediaAccountsService
     {
+        private readonly ISocialMediaAccountsDal _socialMediaAccountsDal;
+
+        public SocialMediaAccountsManager(ISocialMediaAccountsDal socialMediaAccountsDal)
+        {
+            _socialMediaAccountsDal = socialMediaAccountsDal;
+        }
+
         public void TCraete(SocialMediaAccounts t)
         {
-            throw new NotImplementedException();
+            _socialMediaAccountsDal.Craete(t);
         }
 
         public void TDelete(SocialMediaAccounts t)
         {
-            throw new NotImplementedException();
+           _socialMediaAccountsDal.Delete(t);
         }
 
-        public Task<SocialMediaAccounts> TGetById(int id)
+        public async Task<SocialMediaAccounts> TGetById(int id)
         {
-            throw new NotImplementedException();
+            return await _socialMediaAccountsDal.GetById(id);
         }
 
-        public Task<List<SocialMediaAccounts>> TGetListAll()
+        public async Task<List<SocialMediaAccounts>> TGetListAll()
         {
-            throw new NotImplementedException();
+            return await _socialMediaAccountsDal.GetListAll();
         }
 
         public void TUpdate(SocialMediaAccounts t)
         {
-            throw new NotImplementedException();
+            _socialMediaAccountsDal.Update(t);
         }
     }
 }

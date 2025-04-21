@@ -1,0 +1,64 @@
+﻿@model List<ResultSocialMediaAcconutDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+@section Scripts {
+    <!-- Datatable ~/focus-2 -->
+    <script src="~/focus-2/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/focus-2/js/plugins-init/datatables.init.js"></script>
+    <link href="~/focus-2/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Sosyal Medya Hesaplarımız</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example" class="display" style="min-width: 845px">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Hesap Adı</th>
+                                <th>Eklenme Tarihleri</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+
+                                <tr>
+                                    <td>@count</td>
+                                    <td>@item.SocialMediaName</td>
+                                    <td>@(((DateTime)item.SocialMediaCreateAtTime).ToString())</td>
+                                    <td><a href="/Admin/AdminSocialMediaAccount/DeleteSocialMedia/@item.SocialMediaID" class="btn btn-rounded btn-outline-danger">Sil</a></td>
+                                    <td><a href="/Admin/AdminSocialMediaAccount/UpdateSocialMedia/@item.SocialMediaID" class="btn btn-rounded btn-outline-warning">Güncelle</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>Hesap Adı</th>
+                                <th>Eklenme Tarihleri</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <a href="/Admin/AdminSocialMediaAccount/CreateSocialMedia" class="btn btn-rounded btn-outline-primary"> Yeni Sosyal Medya Kümesi Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

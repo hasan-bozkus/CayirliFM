@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CayirliFM.DtoLayer.Dtos.AddressDtos;
 using CayirliFM.DtoLayer.Dtos.ContactDtos;
+using CayirliFM.DtoLayer.Dtos.SocialMediaAccountsDtos;
 using CayirliFM.DtoLayer.Dtos.StrategyDtos;
 using CayirliFM.EntityLayer.Contrete;
 
@@ -21,6 +22,11 @@ namespace CayirliFM.UI.Map
             CreateMap<Address, ResultGetAddressByIdDto>().ReverseMap();
             CreateMap<Address, CreateAddressDto>().ReverseMap();
             CreateMap<Address, UpdateAddressDto>().ReverseMap();
+
+            CreateMap<SocialMediaAccounts, ResultSocialMediaAcconutDto>().ReverseMap();
+            CreateMap<SocialMediaAccounts, ResultGetSocialMediaAccountDto>().ReverseMap();
+            CreateMap<SocialMediaAccounts, CreateSocialMediaAcconutDto>().ReverseMap();
+            CreateMap<SocialMediaAccounts, UpdateSocialMediaAccountDto>().ReverseMap();
         }
     }
 }
