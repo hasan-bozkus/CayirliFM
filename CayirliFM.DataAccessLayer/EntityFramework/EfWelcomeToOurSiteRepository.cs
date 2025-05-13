@@ -15,5 +15,27 @@ namespace CayirliFM.DataAccessLayer.EntityFramework
         public EfWelcomeToOurSiteRepository(Context context) : base(context)
         {
         }
+
+        public void ChangeToApproved(int id)
+        {
+            using(var context = new Context())
+            {
+                var values = context.WelcomeToOurSites.Find(id);
+                values.Status = "Onaylandı";
+                context.Update(values);
+                context.SaveChanges();
+            }
+        }
+
+        public void ChangeToDeApproved(int id)
+        {
+            using (var context = new Context())
+            {
+                var values = context.WelcomeToOurSites.Find(id);
+                values.Status = "Onaylanmadı";
+                context.Update(values);
+                context.SaveChanges();
+            }
+        }
     }
 }

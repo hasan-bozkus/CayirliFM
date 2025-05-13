@@ -1,4 +1,5 @@
 ﻿using CayirliFM.BusinessLayer.Abstract;
+using CayirliFM.DataAccessLayer.Abstarct;
 using CayirliFM.EntityLayer.Contrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,46 @@ namespace CayirliFM.BusinessLayer.Concrete
 {
     public class WelcomeToOurSiteManager : IWelcomeToOurSiteService
     {
+        private readonly IWelcomeToOurSiteDal _welcomeToOurSiteDal;
+
+        public WelcomeToOurSiteManager(IWelcomeToOurSiteDal welcomeToOurSiteDal)
+        {
+            _welcomeToOurSiteDal = welcomeToOurSiteDal;
+        }
+
+        public void TChangeToApproved(int id)
+        {
+           _welcomeToOurSiteDal.ChangeToApproved(id);
+        }
+
+        public void TChangeToDeApproved(int id)
+        {
+           _welcomeToOurSiteDal.ChangeToDeApproved(id);
+        }
+
         public void TCraete(WelcomeToOurSite t)
         {
-            throw new NotImplementedException();
+            _welcomeToOurSiteDal.Craete(t);
         }
 
         public void TDelete(WelcomeToOurSite t)
         {
-            throw new NotImplementedException();
+            _welcomeToOurSiteDal.Delete(t);
         }
 
-        public Task<WelcomeToOurSite> TGetById(int id)
+        public async Task<WelcomeToOurSite> TGetById(int id)
         {
-            throw new NotImplementedException();
+            return await _welcomeToOurSiteDal.GetById(id);
         }
 
-        public Task<List<WelcomeToOurSite>> TGetListAll()
+        public async Task<List<WelcomeToOurSite>> TGetListAll()
         {
-            throw new NotImplementedException();
+            return await _welcomeToOurSiteDal.GetListAll();
         }
 
         public void TUpdate(WelcomeToOurSite t)
         {
-            throw new NotImplementedException();
+            _welcomeToOurSiteDal.Update(t);
         }
     }
 }

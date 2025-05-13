@@ -1,0 +1,46 @@
+﻿@model UpdateWelcomeToOurSiteDto
+@{
+    ViewData["Title"] = "UpdateWelcomeToOurSite";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-12 col-xxl-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Öne Çıkan Düzenle</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form method="post">
+
+                        <input type="hidden" asp-for="WelcomeID" />
+                        <input type="hidden" asp-for="Status" />
+
+                        <div class="form-group">
+                            <input type="text" asp-for="Title" class="form-control input-rounded " placeholder="Başlık">
+                        </div>
+                        <div class="form-group">
+                            <textarea asp-for="Description" cols="5" class="form-control input-rounded " placeholder="Açıklama"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" asp-for="NewsAlbumImageUrl" class="form-control input-rounded " placeholder="Albüm Görseli (Url)">
+                        </div>
+                        <div class="form-group">
+                            <textarea asp-for="NewsAlbumDescription" cols="5" class="form-control input-rounded " placeholder="Açıklaması"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" asp-for="WiseSaysingImageUrl" class="form-control input-rounded " placeholder="Özlü Söz Görseli (Url)">
+                        </div>
+                        <div class="form-group">
+                            <textarea asp-for="WiseSaysingDescription" cols="5" class="form-control input-rounded " placeholder="Açıklaması"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-outline-primary">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

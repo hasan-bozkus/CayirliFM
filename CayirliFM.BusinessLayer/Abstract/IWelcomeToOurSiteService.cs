@@ -9,5 +9,7 @@ namespace CayirliFM.BusinessLayer.Abstract
 {
     public interface IWelcomeToOurSiteService : IGenericService<WelcomeToOurSite>
     {
+        void TChangeToApproved(int id);
+        void TChangeToDeApproved(int id);
     }
 }

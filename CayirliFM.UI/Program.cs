@@ -34,6 +34,9 @@ builder.Services.AddScoped<IAddressService, AddressManager>();
 builder.Services.AddScoped<ISocialMediaAccountsDal, EfSocialMediaAccountsRepository>();
 builder.Services.AddScoped<ISocialMediaAccountsService, SocialMediaAccountsManager>();
 
+builder.Services.AddScoped<IWelcomeToOurSiteDal, EfWelcomeToOurSiteRepository>();
+builder.Services.AddScoped<IWelcomeToOurSiteService, WelcomeToOurSiteManager>();
+
 builder.Services.AddAutoMapper(typeof(Program));
 
 // Add services to the container.

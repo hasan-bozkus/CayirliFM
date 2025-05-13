@@ -9,5 +9,7 @@ namespace CayirliFM.DataAccessLayer.Abstarct
 {
     public interface IWelcomeToOurSiteDal : IGenericDal<WelcomeToOurSite>
     {
+        void ChangeToApproved(int id);
+        void ChangeToDeApproved(int id);
     }
 }
