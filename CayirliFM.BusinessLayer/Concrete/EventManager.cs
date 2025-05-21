@@ -1,4 +1,5 @@
 ﻿using CayirliFM.BusinessLayer.Abstract;
+using CayirliFM.DataAccessLayer.Abstarct;
 using CayirliFM.EntityLayer.Contrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace CayirliFM.BusinessLayer.Concrete
 {
     public class EventManager : IEventService
     {
+        private readonly IEventDal _eventDal;
+
+        public EventManager(IEventDal eventDal)
+        {
+            _eventDal = eventDal;
+        }
+
         public void TCraete(Event t)
         {
-            throw new NotImplementedException();
+            _eventDal.Craete(t);
         }
 
         public void TDelete(Event t)
         {
-            throw new NotImplementedException();
+            _eventDal.Delete(t);
         }
 
-        public Task<Event> TGetById(int id)
+        public async Task<Event> TGetById(int id)
         {
-            throw new NotImplementedException();
+            return await _eventDal.GetById(id);
         }
 
-        public Task<List<Event>> TGetListAll()
+        public async Task<List<Event>> TGetListAll()
         {
-            throw new NotImplementedException();
+            return await _eventDal.GetListAll();
         }
 
         public void TUpdate(Event t)
         {
-            throw new NotImplementedException();
+            _eventDal.Update(t);
         }
     }
 }

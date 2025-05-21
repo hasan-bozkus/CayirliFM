@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using CayirliFM.DtoLayer.Dtos.AddressDtos;
+using CayirliFM.DtoLayer.Dtos.CategoryEventDtos;
 using CayirliFM.DtoLayer.Dtos.ContactDtos;
+using CayirliFM.DtoLayer.Dtos.EventDtos;
 using CayirliFM.DtoLayer.Dtos.SocialMediaAccountsDtos;
 using CayirliFM.DtoLayer.Dtos.StrategyDtos;
 using CayirliFM.DtoLayer.Dtos.WelcomeToOurSiteDto;
@@ -33,6 +35,16 @@ namespace CayirliFM.UI.Map
             CreateMap<WelcomeToOurSite, ResultGetWelcomeToOurSiteDto>().ReverseMap();
             CreateMap<WelcomeToOurSite, CreateWelcomeToOurSiteDto>().ReverseMap();
             CreateMap<WelcomeToOurSite, UpdateWelcomeToOurSiteDto>().ReverseMap();
+
+            CreateMap<Event, ResultEventDto>().ReverseMap();
+            CreateMap<Event, ResultEventDto>().ReverseMap();
+            CreateMap<Event, CreateEventDto>().ReverseMap();
+            CreateMap<Event, UpdateEventDto>().ReverseMap();
+
+            CreateMap<CategoryEvent, ResultCategoryEventDto>().ReverseMap();
+            CreateMap<CategoryEvent, ResultCategoryEventDto>().ReverseMap();
+            CreateMap<CategoryEvent, CreateCategoryEventDto>().ReverseMap();
+            CreateMap<CategoryEvent, UpdateCategoryEventDto>().ReverseMap();
         }
     }
 }

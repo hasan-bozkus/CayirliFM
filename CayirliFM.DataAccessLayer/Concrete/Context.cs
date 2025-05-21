@@ -27,6 +27,7 @@ namespace CayirliFM.DataAccessLayer.Concrete
         public DbSet<Strategy> Strategies { get; set; }
         public DbSet<WelcomeToOurSite> WelcomeToOurSites { get; set; }
         public DbSet<ReplyToContact> ReplyToContacts { get; set; }
+        public DbSet<CategoryEvent> CategoryEvents { get; set; }
 
     }
 }
