@@ -8,9 +8,10 @@ namespace CayirliFM.DtoLayer.Dtos.EventDtos
 {
     public class CreateEventDto
     {
-        public DateTime EventTime { get; set; }
+        public DateTime EventStartDate { get; set; }
+        public DateTime EventEndDate { get; set; }
         public string EventTitle { get; set; }
-        public string EventDescription { get; set; }
-        public string Status { get; set; }
+        public string EventColor { get; set; }
+        public bool Status { get; set; }
     }
 }

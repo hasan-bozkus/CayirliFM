@@ -1,13 +1,12 @@
-﻿
+﻿@model List<ResultCategoryEventDto>
+
 <div class="">
     <div id="external-events" class="my-3">
         <p>Birini Seçiniz</p>
-        <div class="external-event" data-class="bg-primary"><i class="fa fa-move"></i>Yeni Sürüm Yönetimi</div>
-        <div class="external-event" data-class="bg-success">
-            <i class="fa fa-move"></i>Etkinliklerim
-        </div>
-        <div class="external-event" data-class="bg-warning"><i class="fa fa-move"></i>Toplantı Yönetimi</div>
-        <div class="external-event" data-class="bg-dark"><i class="fa fa-move"></i>Yeni Tema</div>
+        @foreach(var item in Model)
+        {
+            <div class="external-event" data-class="@item.CategoryColor"><i class="fa fa-move"></i>@item.CategoryName</div>
+        }       
     </div>
     <!-- checkbox -->
     <div class="checkbox checkbox-event pt-3 pb-5">

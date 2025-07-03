@@ -19,7 +19,7 @@ namespace CayirliFM.UI.ViewComponents.Admin.AdminEvent
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var values = _mapper.Map<List<ResultCategoryEventDto>>(await _categoryEventService.TGetListAll());
-            return View();
+            return View(values);
         }
     }
 }
