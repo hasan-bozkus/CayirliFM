@@ -44,7 +44,7 @@ namespace CayirliFM.UI.Areas.Admin.Controllers
             createCategoryEventDto.CategoryColor = "bg-" + createCategoryEventDto.CategoryColor;
             var createdData = _mapper.Map<CategoryEvent>(createCategoryEventDto);
             _categoryEventService.TCraete(createdData);
-            if(createdData != null)
+            if (createdData != null)
             {
                 return Ok("işlem başarılı");
             }
@@ -56,11 +56,33 @@ namespace CayirliFM.UI.Areas.Admin.Controllers
             var createdData = _mapper.Map<Event>(createEventDto);
             _eventService.TCraete(createdData);
 
-            if(createdData != null)
+            if (createdData != null)
             {
                 return Ok("işlem başarılı");
             }
             return NoContent();
+        }
+
+        public IActionResult UpdateEvent(UpdateEventDto updateEventDto)
+        {
+            var updatedData = _mapper.Map<Event>(updateEventDto);
+            _eventService.TUpdate(updatedData);
+            if (updatedData != null)
+            {
+                return Ok("işlem başarılı");
+            }
+            return NoContent();
+        }
+
+        public async Task<IActionResult> DeleteEvent(int id)
+        {
+            var eventToDelete = await _eventService.TGetById(id);
+            if (eventToDelete != null)
+            {
+                _eventService.TDelete(eventToDelete);
+                return Ok("işlem başarılı");
+            }
+            return NotFound("Event not found");
         }
     }
 }

@@ -1,0 +1,19 @@
+﻿@model List<ResultEventDto>
+
+    @{
+        var lastItem = Model.Last();
+    }
+
+@foreach(var item in Model)
+{
+    <text>
+        {
+        _id: "@item.EventID",
+        title: "@item.EventTitle",
+        start: "@item.EventStartDate.ToString("yyyy-MM-ddTHH:mm:ss")",
+        end: "@item.EventEndDate.ToString("yyyy-MM-ddTHH:mm:ss")",
+        className: "@item.EventColor"
+        }
+        @(item != lastItem ? "," : "")
+    </text>
+}
