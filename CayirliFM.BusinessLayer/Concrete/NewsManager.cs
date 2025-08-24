@@ -44,6 +44,11 @@ namespace CayirliFM.BusinessLayer.Concrete
             return _newsDal.GetById(id);
         }
 
+        public async Task<List<News>> TGetLast4NewsWithApproved()
+        {
+            return await _newsDal.GetLast4NewsWithApproved();
+        }
+
         public Task<List<News>> TGetListAll()
         {
             return _newsDal.GetListAll();

@@ -1,0 +1,24 @@
+﻿@model List<ResultEventDto>
+
+
+<div class="events">
+    <div class="container">
+        <h3 class="agile-title">Etkinlikler</h3>
+        <div class="events-info">
+
+            @foreach(var item in Model)
+            {
+                <div class="col-md-6 event-grids">
+                    <div class="w3layouts-text">
+                        <h4> @item.EventStartDate.ToString("dd")<span>@item.EventStartDate.ToString("MMM")</span></h4>
+                        <h6><a href="single.html">@item.EventTitle </a></h6>
+                        <div class="clearfix"> </div>
+                    </div>
+                   @*  <p>Kasertas lertyasea deeraeser miasera lertasa ritise doloert ferdas caplicabo nerafaes asety u lasec vaserat. nikertyade asetkertyptaiades goertayse.nikertyade asetkertyptaiades goertayse</p> *@
+                </div>
+
+            }
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>

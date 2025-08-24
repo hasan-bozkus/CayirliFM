@@ -1,0 +1,30 @@
+﻿@model ResultGetWelcomeToOurSiteDto
+
+
+<div class="welcome agileits">
+    <div class="container">
+        <h2 class="agile-title">@Model.Title</h2>
+        <p>@Model.Description</p>
+        <div class="welcome-agileinfo">
+            <div class="col-md-6 col-sm-6 col-xs-6 welcome-grids">
+                <div class="view view-w3-agile">
+                    <img src="@Model.NewsAlbumImageUrl" alt="" class="img-responsive" />
+                    <div class="agileits-w3layouts-mask">
+                        <h4>Yeni Albüm</h4>
+                        <p>@Model.NewsAlbumDescription</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 welcome-grids">
+                <div class="view view-w3-agile">
+                    <img src="@Model.WiseSaysingImageUrl" alt="" class="img-responsive" />
+                    <div class="agileits-w3layouts-mask">
+                        <h4>Özlü Söz</h4>
+                        <p>@Model.WiseSaysingDescription</p>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>

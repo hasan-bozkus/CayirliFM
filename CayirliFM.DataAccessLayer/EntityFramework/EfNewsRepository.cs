@@ -3,6 +3,7 @@ using CayirliFM.DataAccessLayer.Concrete;
 using CayirliFM.DataAccessLayer.Repositories;
 using CayirliFM.EntityLayer.Contrete;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,16 @@ namespace CayirliFM.DataAccessLayer.EntityFramework
                 result.NewsStatus = "Onaylanmadı";
                 context.Update(result);
                 context.SaveChanges();
+            }
+        }
+
+        public async Task<List<News>> GetLast4NewsWithApproved()
+        {
+            using (var context = new Context())
+            {
+                var values = await context.News.Where(x => x.NewsStatus == "Onaylandı").OrderByDescending(y => y.NewsID).Take(4).ToListAsync();
+
+                return values;
             }
         }
 

@@ -12,5 +12,6 @@ namespace CayirliFM.BusinessLayer.Abstract
         Task<List<News>> TGetListNewsWithCategoryAsync();
         void TChangeNewsStatusToApproved(int id);
         void TChangeNewsStatusToNotApproved(int id);
+        Task<List<News>> TGetLast4NewsWithApproved();
     }
 }

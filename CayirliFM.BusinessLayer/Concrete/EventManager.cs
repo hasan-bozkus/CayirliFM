@@ -38,6 +38,11 @@ namespace CayirliFM.BusinessLayer.Concrete
             return await _eventDal.GetListAll();
         }
 
+        public async Task<List<Event>> TUpcomingEventsAsync()
+        {
+            return await _eventDal.UpcomingEventsAsync();
+        }
+
         public void TUpdate(Event t)
         {
             _eventDal.Update(t);

@@ -9,5 +9,6 @@ namespace CayirliFM.DataAccessLayer.Abstarct
 {
     public interface IEventDal : IGenericDal<Event>
     {
+        Task<List<Event>> UpcomingEventsAsync();
     }
 }

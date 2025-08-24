@@ -1,0 +1,25 @@
+﻿@model List<ResultLast4NewsDto>
+
+<div class="albums">
+    <div class="container">
+        <h3 class="agile-title">Son Haberler</h3>
+
+        @foreach(var item in Model)
+        {
+            <div class="col-md-6 w3lsalbums-grid">
+                <div class="albums-left">
+                    <img src="@item.NewsSubImage" style="height:400px" class="wthree-almubs1" />
+                </div>
+                <div class="albums-right">
+                    <h4>@item.NewsTitle</h4>
+                    <p>@item.NewsSubDescrpition</p>
+                    <a class="w3more" href="/News/NewsDetail/@item.NewsID"><i class="fa fa-mail-forward" aria-hidden="true"></i> More</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+        }
+
+        <div class="clearfix"></div>
+    </div>
+</div>

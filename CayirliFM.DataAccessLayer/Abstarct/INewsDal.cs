@@ -12,5 +12,6 @@ namespace CayirliFM.DataAccessLayer.Abstarct
         Task<List<News>> GetListNewsWithCategoryAsync();
         void ChangeNewsStatusToApproved(int id);
         void ChangeNewsStatusToNotApproved(int id);
+        Task<List<News>> GetLast4NewsWithApproved();
     }
 }

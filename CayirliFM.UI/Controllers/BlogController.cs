@@ -1,12 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CayirliFM.BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+using X.PagedList;
+using X.PagedList.Extensions;
 
 namespace CayirliFM.UI.Controllers
 {
 	public class BlogController : Controller
 	{
-		public IActionResult Index()
+
+		private readonly INewsService _newsService;
+
+        public BlogController(INewsService newsService)
+        {
+            _newsService = newsService;
+        }
+
+        public async Task<IActionResult> Index(int page = 1)
 		{
-			return View();
+			var values = await _newsService.TGetListAll();
+			return View(values.ToPagedList(page, 6));
 		}
 	}
 }

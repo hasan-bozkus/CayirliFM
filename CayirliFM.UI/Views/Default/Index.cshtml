@@ -1,16 +1,14 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/UserLayout/_UserLayout.cshtml";
 }
 
-    <!-- welcome -->
-    @await Html.PartialAsync("WelcomePartial.cshtml")
-    <!-- //welcome -->
-    <!-- events -->
-   @await Html.PartialAsync("EventPartial.cshtml")
-    <!-- //events -->
-    <!--- albums -->
-    @await Html.PartialAsync("AlbumsPartial.cshtml")
-    <!--- //albums -->
-
+<!-- welcome -->
+@await Component.InvokeAsync("_DefaultWelcomePartial")
+<!-- //welcome -->
+<!-- events -->
+@await Component.InvokeAsync("_DefaultEventsPartial")
+<!-- //events -->
+<!--- albums -->
+@await Component.InvokeAsync("_DefaultNewsPartial")
+<!--- //albums -->
