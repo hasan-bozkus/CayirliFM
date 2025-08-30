@@ -11,5 +11,6 @@ namespace CayirliFM.DataAccessLayer.Abstarct
     {
         Task ChangeToTrueWithStrategy(int id);
         Task ChangeToFalseWithStrategy(int id);
+        Task<List<Strategy>> GetStrategyListWithStatusTrue();
     }
 }

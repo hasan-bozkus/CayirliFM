@@ -11,5 +11,6 @@ namespace CayirliFM.BusinessLayer.Abstract
     {
         Task TChangeToTrueWithStrategy(int id);
         Task TChangeToFalseWithStrategy(int id);
+        Task<List<Strategy>> TGetStrategyListWithStatusTrue();
     }
 }

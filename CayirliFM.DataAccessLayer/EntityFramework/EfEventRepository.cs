@@ -27,5 +27,12 @@ namespace CayirliFM.DataAccessLayer.EntityFramework
             var values = await _context.Events.Where(x => x.EventStartDate >= today).Take(2).ToListAsync();
             return values;
         }
+
+        public async Task<List<Event>> UpcomingLast4EventsAsync()
+        {
+            var today = DateTime.Today;
+            var values = await _context.Events.Where(x => x.EventStartDate >= today).Take(4).ToListAsync();
+            return values;
+        }
     }
 }

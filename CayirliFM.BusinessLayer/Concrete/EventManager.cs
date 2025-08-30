@@ -43,6 +43,11 @@ namespace CayirliFM.BusinessLayer.Concrete
             return await _eventDal.UpcomingEventsAsync();
         }
 
+        public async Task<List<Event>> TUpcomingLast4EventsAsync()
+        {
+            return await _eventDal.UpcomingLast4EventsAsync();
+        }
+
         public void TUpdate(Event t)
         {
             _eventDal.Update(t);

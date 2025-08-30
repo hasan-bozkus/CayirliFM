@@ -2,6 +2,7 @@
 using CayirliFM.DataAccessLayer.Concrete;
 using CayirliFM.DataAccessLayer.Repositories;
 using CayirliFM.EntityLayer.Contrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,15 @@ namespace CayirliFM.DataAccessLayer.EntityFramework
                 var result = await context.Strategies.FindAsync(id);
                 result.StrategyStatus = true;
                 await context.SaveChangesAsync();
+            }
+        }
+
+        public async Task<List<Strategy>> GetStrategyListWithStatusTrue()
+        {
+            using(var context = new Context())
+            {
+                var values = await context.Strategies.Where(x => x.StrategyStatus == true).ToListAsync();
+                return values;
             }
         }
     }

@@ -48,6 +48,11 @@ namespace CayirliFM.BusinessLayer.Concrete
             return await _startegyDal.GetListAll();
         }
 
+        public async Task<List<Strategy>> TGetStrategyListWithStatusTrue()
+        {
+            return await _startegyDal.GetStrategyListWithStatusTrue();
+        }
+
         public void TUpdate(Strategy t)
         {
             _startegyDal.Update(t);

@@ -41,6 +41,7 @@ namespace CayirliFM.UI.Map
             CreateMap<Event, ResultEventDto>().ReverseMap();
             CreateMap<Event, CreateEventDto>().ReverseMap();
             CreateMap<Event, UpdateEventDto>().ReverseMap();
+            CreateMap<Event, ResultGetLast4EventsDto>().ReverseMap();
 
             CreateMap<CategoryEvent, ResultCategoryEventDto>().ReverseMap();
             CreateMap<CategoryEvent, ResultCategoryEventDto>().ReverseMap();

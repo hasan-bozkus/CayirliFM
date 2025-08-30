@@ -10,5 +10,6 @@ namespace CayirliFM.BusinessLayer.Abstract
     public interface IEventService : IGenericService<Event>
     {
         Task<List<Event>> TUpcomingEventsAsync();
+        Task<List<Event>> TUpcomingLast4EventsAsync();
     }
 }

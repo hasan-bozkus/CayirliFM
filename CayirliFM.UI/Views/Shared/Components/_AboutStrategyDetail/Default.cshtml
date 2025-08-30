@@ -1,0 +1,19 @@
+﻿@model List<Strategy>
+
+<div class="skill">
+    <div class="container">
+        <div class="col-md-4 skill-grids">
+            <h3 class="agile-title">Stratejimiz</h3>
+        </div>
+        <div class="col-md-8 skill-grids">
+            @foreach(var item in Model)
+            {
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="@item.StrategyValue" aria-valuemin="0" aria-valuemax="100" style="width: @item.StrategyValue%;">
+                        <h6>@item.StrategyTitle</h6> <p>@item.StrategyValue%</p>
+                    </div>
+                </div>
+            }           
+        </div>
+    </div>
+</div>

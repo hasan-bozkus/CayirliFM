@@ -1,0 +1,26 @@
+﻿@model List<ResultGetLast4EventsDto>
+
+@{
+    int count = 00;
+}
+
+<div class="col-md-4 about-grids">
+    <h4>Yaklaşan Etkinlikler</h4>
+    @foreach (var item in Model)
+    {
+        count++;
+
+        <div class="pince">
+            <div class="pince-left">
+                <h5>@count</h5>
+            </div>
+            <div class="pince-right">
+                <p>@item.EventTitle</p>
+                <p>@item.EventStartDate.ToString("dd-MMM-yyyy")</p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+    }
+
+</div>
