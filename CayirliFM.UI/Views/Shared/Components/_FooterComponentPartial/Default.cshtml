@@ -1,0 +1,66 @@
+﻿@model Address
+
+<div class="agilebg-footer">
+	<div class="footer">
+		<div class="container">
+			<div class="footer-agileinfo">
+				<div class="col-md-3 col-sm-3 footer-wthree-grid">
+					<h3>Hızlı Linkler</h3>
+					<ul>
+						<li><a href="/Default/Index/">Ana Sayfa</a></li>
+						<li><a href="/Blog/Index/">/Haberler</a></li>
+						<li><a href="/RadioStream/Index/">Radyo Dinle</a></li>
+						<li><a href="/About/Index/">Hakkımızda</a></li>
+						<li><a href="/Contact/Index/">İletişim</a></li>
+					</ul>
+				</div>
+				<div class="col-md-5 col-sm-5 footer-wthree-grid">
+					<h3>Son Gönderi</h3>
+					<div class="agileits-w3layouts-tweets">
+						<h5><i class="fa fa-twitter" aria-hidden="true"></i> Lorem ipsum</h5>
+					</div>
+					<p>Aenean vitae metus sit amet purus sodales blandit. Nullam ut dolor eu urna viverra semper. Mauris est odio, laoreet laoreet sapien non, sollicitudin bibendum nulla.</p>
+				</div>
+				<div class="col-md-4 col-sm-4 footer-wthree-grid">
+					<h3>Bize Ulaşın</h3>
+					<div class="ftr-icons">
+						<div class="ftr-iblock">
+							<span class="glyphicon glyphicon-map-marker">  </span>
+						</div>
+						<div class="ftr-text">
+							<p>@Model.Description.Substring(0, 10)...</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="ftr-icons">
+						<div class="ftr-iblock">
+							<span class="glyphicon glyphicon-earphone">  </span>
+						</div>
+						<div class="ftr-text">
+							<p>@Model.Phone</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="ftr-icons">
+						<div class="ftr-iblock">
+							<span class="glyphicon glyphicon-envelope">  </span>
+						</div>
+						<div class="ftr-text">
+							<p><a href="mailto:@Model.EMail">@Model.EMail</a></p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //footer end here -->
+<!-- copy rights start here -->
+<div class="copy-right">
+	<div class="container">
+		<p>© @DateTime.Now.Year Çayırlı FM. Tüm Hakları Saklıdır | <a href="http://w3layouts.com/" target="_blank">W3layouts</a> Tasarımıdır. </p>
+	</div>
+</div>
+<!-- //copy right end here -->

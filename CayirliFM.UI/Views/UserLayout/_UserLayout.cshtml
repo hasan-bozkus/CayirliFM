@@ -11,7 +11,7 @@
         <div class="banner"> 
         </div> 
 
-        @await Html.PartialAsync("HeaderPartial.cshtml")
+        @await Component.InvokeAsync("_HeaderComponentPartial")
 
         <!-- navigation start here -->
         @await Html.PartialAsync("NavbarPartial.cshtml")
@@ -19,7 +19,7 @@
     <!-- navigation end here -->
 @RenderBody()
     <!-- footer start here -->
-    @await Html.PartialAsync("FooterPartial.cshtml")
+    @await Component.InvokeAsync("_FooterComponentPartial")
     @await Html.PartialAsync("ScriptPartial.cshtml")
 </body>
 </html>

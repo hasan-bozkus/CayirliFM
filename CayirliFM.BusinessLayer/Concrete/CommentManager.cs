@@ -1,4 +1,5 @@
 ﻿using CayirliFM.BusinessLayer.Abstract;
+using CayirliFM.DataAccessLayer.Abstarct;
 using CayirliFM.EntityLayer.Contrete;
 using System;
 using System.Collections.Generic;
@@ -10,28 +11,41 @@ namespace CayirliFM.BusinessLayer.Concrete
 {
     public class CommentManager : ICommentService
     {
-        public void TCraete(Comment t)
+        private readonly ICommentDal _commentDal;
+
+        public CommentManager(ICommentDal commentDal)
         {
-            throw new NotImplementedException();
-        }
-                public void TDelete(Comment t)
-        {
-            throw new NotImplementedException();
+            _commentDal = commentDal;
         }
 
-        public Task<Comment> TGetById(int id)
+        public void TCraete(Comment t)
         {
-            throw new NotImplementedException();
+            _commentDal.Craete(t);
+        }
+        public void TDelete(Comment t)
+        {
+            _commentDal.Delete(t);
+        }
+
+        public async Task<Comment> TGetById(int id)
+        {
+            return await _commentDal.GetById(id);
+                 
+        }
+
+        public async Task<List<Comment>> TGetCommentListByBlogId(int id)
+        {
+            return await _commentDal.GetCommentListByBlogId(id);
         }
 
         public Task<List<Comment>> TGetListAll()
         {
-            throw new NotImplementedException();
+            return _commentDal.GetListAll();
         }
 
         public void TUpdate(Comment t)
         {
-            throw new NotImplementedException();
+            _commentDal.Update(t);
         }
     }
 }

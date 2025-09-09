@@ -9,5 +9,6 @@ namespace CayirliFM.BusinessLayer.Abstract
 {
     public interface ICommentService : IGenericService<Comment>
     {
+        Task<List<Comment>> TGetCommentListByBlogId(int id);
     }
 }

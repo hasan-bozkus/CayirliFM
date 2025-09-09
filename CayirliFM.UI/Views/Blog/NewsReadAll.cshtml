@@ -1,0 +1,29 @@
+﻿@model News
+
+@{
+    ViewData["Title"] = "NewsReadAll";
+    Layout = "~/Views/UserLayout/_UserLayout.cshtml";
+}
+
+<!-- single -->
+<div class="single">
+    <div class="container">
+        <div class="wthree_single_grid">
+            <h2>@Model.NewsTitle</h2>
+            
+        </div>
+        <div class="agile_single_banner">
+            <img src="@Model.NewsImage" alt="" class="img-responsive" />
+        </div>
+        <div class="wthree_single_grid1">
+            <p>
+               @Html.Raw(Model.NewsDescription)
+            </p>
+        </div>
+
+        @await Component.InvokeAsync("_CommentListByBlogId", new { id = ViewBag.id })
+
+
+    </div>
+</div>
+<!-- //single -->

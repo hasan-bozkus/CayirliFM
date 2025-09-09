@@ -17,7 +17,7 @@ namespace CayirliFM.EntityLayer.Contrete
         public string Phone { get; set; }
         public string ContactSubject { get; set; }
         public string ContactMessage { get; set; }
-        public string ContactCreateAtTime { get; set; }
+        public DateTime ContactCreateAtTime { get; set; }
         public bool Status { get; set; }
     }
 }

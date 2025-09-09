@@ -1,11 +1,11 @@
 ﻿<div class="top-nav">
-	<span class="menu">Menu</span>
+	<span class="menu">Menü</span>
 	<ul class="w3l">
-		<li><a class="active" href="/Default/Index"><i aria-hidden="true" class="glyphicon glyphicon-home"></i><span>Ana Sayfa</span></a></li>
-		<li><a href="/Blog/Index"><i class="glyphicon glyphicon-user"></i><span>About</span></a></li>
-		<li><a href="#"><i class="glyphicon glyphicon-list-alt"></i><span>Radyo Dinle</span></a></li>
-		<li><a href="/About/Index"><i class="glyphicon glyphicon-picture"></i><span>Hakkımızda</span></a></li>
-		<li><a href="/Contact/Index"><i class="glyphicon glyphicon-envelope"></i><span>İletişim</span></a></li>
+		<li><a class="@(ViewBag.isActive == "Default"? "active" : "")" href="/Default/Index"><i aria-hidden="true" class="glyphicon glyphicon-home"></i><span>Ana Sayfa</span></a></li>
+		<li><a class="@(ViewBag.isActive == "Blog" ? "active" : "")" href="/Blog/Index"><i class="glyphicon glyphicon-user"></i><span>Haberler</span></a></li>
+		<li><a class="@(ViewBag.isActive == "RadioStream" ? "active" : "")" href="#"><i class="glyphicon glyphicon-list-alt"></i><span>Radyo Dinle</span></a></li>
+		<li><a class="@(ViewBag.isActive == "About" ? "active" : "")" href="/About/Index"><i class="glyphicon glyphicon-picture"></i><span>Hakkımızda</span></a></li>
+		<li><a class="@(ViewBag.isActive == "Contact" ? "active" : "")" href="/Contact/Index"><i class="glyphicon glyphicon-envelope"></i><span>İletişim</span></a></li>
 	</ul>
 	<!-- script-for-menu -->
 	<script>

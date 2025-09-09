@@ -43,6 +43,9 @@ builder.Services.AddScoped<IEventService, EventManager>();
 builder.Services.AddScoped<ICategoryEventDal, EfCategoryEventRepository>();
 builder.Services.AddScoped<ICategoryEventService, CategoryEventManager>();
 
+builder.Services.AddScoped<ICommentDal, EfCommentRepository>();
+builder.Services.AddScoped<ICommentService, CommentManager>();
+
 builder.Services.AddAutoMapper(typeof(Program));
 
 // Add services to the container.

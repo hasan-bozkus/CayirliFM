@@ -1,0 +1,30 @@
+﻿@model List<Comment>
+
+<div class="popular-posts">
+    <h4 class="w3ls-title">Yorumlar</h4>
+    <div class="popular-posts-grids">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 col-sm-3 col-xs-6 popular-posts-grid">
+                <div class="popular-posts-grid1">
+                    <a href="single.html"><img src="~/Rock-Web/images/img3.jpg" alt=" " class="img-responsive"></a>
+                    <h4><a href="single.html">@item.NameSurname</a></h4>
+                    <p>@item.Message</p>
+                </div>
+            </div>
+        }
+        <div class="clearfix"> </div>
+    </div>
+</div>
+
+<div class="write-reply">
+    <h4 class="w3ls-title">Bir Yorum Bırakın</h4>
+    <form asp-action="CreateComment" asp-controller="Blog" method="post">
+        <input type="text" name="NameSurname" placeholder="Adınız Soyadınız..." required="">
+        <input type="text" name="EMail" placeholder="E-Posta Adresiniz..." required="">
+        <textarea name="Message" placeholder="Yorumunuzu Yazınız..." required=""></textarea>
+        <input type="hidden" name="NewsID" value="@ViewBag.id" />
+        <input type="submit" value="Yorum Yap">
+    </form>
+</div>

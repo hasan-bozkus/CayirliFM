@@ -1,10 +1,23 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using CayirliFM.BusinessLayer.Abstract;
+using CayirliFM.DtoLayer.Dtos.SocialMediaAccountsDtos;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace CayirliFM.UI.Controllers
 {
 	public class UserLayoutController : Controller
-	{
-		public IActionResult _UserLayout()
+	{	
+		private readonly ISocialMediaAccountsService _socialMediaAccountsService;
+		private readonly IMapper _mapper;
+
+        public UserLayoutController(ISocialMediaAccountsService socialMediaAccountsService, IMapper mapper)
+        {
+            _socialMediaAccountsService = socialMediaAccountsService;
+            _mapper = mapper;
+        }
+
+        public IActionResult _UserLayout()
 		{
 			return View();
 		}
@@ -14,9 +27,10 @@ namespace CayirliFM.UI.Controllers
 			return PartialView();
 		}
 
-		public IActionResult HeaderPartial()
+		public async Task<IActionResult> HeaderPartial()
 		{
-			return PartialView();
+			var values = _mapper.Map<List<ResultSocialMediaAcconutDto>>(await _socialMediaAccountsService.TGetListAll());
+			return PartialView(values);
 		}
 
 		public IActionResult NavbarPartial()

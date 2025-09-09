@@ -6,6 +6,7 @@ namespace CayirliFM.UI.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.isActive = "About";
             return View();
         }
     }

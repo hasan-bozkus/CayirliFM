@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ResultSocialMediaAcconutDto>
+﻿@model List<ResultSocialMediaAcconutDto>
 
 <div class="agileinfo-header">
     <div class="container">
@@ -9,7 +9,7 @@
             <div class="social-icon">
                 @foreach (var item in Model)
                 {
-                    <a href="@item.SocialMediaUrl" class="social-button twitter" title="@item.SocialMediaName" ><i class="@item.Icon"></i></a>
+                    <a href="@item.SocialMediaUrl" class="social-button twitter" title="@item.SocialMediaName"><i class="@item.Icon"></i></a>
                 }
             </div>
         </div>

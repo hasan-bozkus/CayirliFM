@@ -9,5 +9,6 @@ namespace CayirliFM.DataAccessLayer.Abstarct
 {
     public interface ICommentDal : IGenericDal<Comment>
     {
+        Task<List<Comment>> GetCommentListByBlogId(int id);
     }
 }
