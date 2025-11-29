@@ -17,6 +17,8 @@ namespace CayirliFM.EntityLayer.Contrete
         public DateTime CommentCreateAtTime { get; set; }
         public bool Status { get; set; }
 
+        public bool IsToxic { get; set; }
+        public string ToxicityScore { get; set; }
         public int NewsID { get; set; }
         public News News { get; set; }
     }

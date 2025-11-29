@@ -1,5 +1,6 @@
 using CayirliFM.BusinessLayer.Abstract;
 using CayirliFM.BusinessLayer.Concrete;
+using CayirliFM.BusinessLayer.External;
 using CayirliFM.DataAccessLayer.Abstarct;
 using CayirliFM.DataAccessLayer.Concrete;
 using CayirliFM.DataAccessLayer.EntityFramework;
@@ -45,6 +46,8 @@ builder.Services.AddScoped<ICategoryEventService, CategoryEventManager>();
 
 builder.Services.AddScoped<ICommentDal, EfCommentRepository>();
 builder.Services.AddScoped<ICommentService, CommentManager>();
+
+builder.Services.AddHttpClient<IHuggingFaceService, HuggingFaceManager>();
 
 builder.Services.AddAutoMapper(typeof(Program));
 

@@ -1,4 +1,5 @@
 ﻿@model List<Comment>
+@using System.Web
 
 <div class="popular-posts">
     <h4 class="w3ls-title">Yorumlar</h4>
@@ -28,3 +29,28 @@
         <input type="submit" value="Yorum Yap">
     </form>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if (TempData["ModalMessage"] != null)
+{
+    var decodedMessage = HttpUtility.HtmlDecode(TempData["ModalMessage"].ToString());
+
+    <script>
+            $(document).ready(function () {
+                Swal.fire({
+                    title: '@(TempData["ModalStatus"]?.ToString() == "Success" ? "Başarılı!" : TempData["ModalStatus"]?.ToString() == "Toxic" ? "Uyarı!" : "Hata!")',
+            text: @Html.Raw(Json.Serialize(decodedMessage)),
+            icon: '@(TempData["ModalStatus"]?.ToString() == "Success" ? "success" : TempData["ModalStatus"]?.ToString() == "Toxic" ? "warning" : "error")',
+            confirmButtonText: 'Tamam',
+            confirmButtonColor: '#3085d6',
+            backdrop: true,
+            allowOutsideClick: true,
+            timer: 5000,
+            timerProgressBar: true
+        });
+    });
+</script>
+
+}
+
