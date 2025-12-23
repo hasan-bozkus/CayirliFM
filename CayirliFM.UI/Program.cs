@@ -6,6 +6,9 @@ using CayirliFM.DataAccessLayer.Concrete;
 using CayirliFM.DataAccessLayer.EntityFramework;
 using CayirliFM.DataAccessLayer.Repositories;
 using CayirliFM.EntityLayer.Contrete;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,12 +50,30 @@ builder.Services.AddScoped<ICategoryEventService, CategoryEventManager>();
 builder.Services.AddScoped<ICommentDal, EfCommentRepository>();
 builder.Services.AddScoped<ICommentService, CommentManager>();
 
+builder.Services.AddScoped<IEmployeeDal, EfEmployeeRepository>();
+builder.Services.AddScoped<IEmployeeService, EmployeeManager>();
+
 builder.Services.AddHttpClient<IHuggingFaceService, HuggingFaceManager>();
 
 builder.Services.AddAutoMapper(typeof(Program));
 
+builder.Services.AddIdentity<AppUser, IdentityRole<int>>().AddEntityFrameworkStores<Context>();
+
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(config =>
+{
+    var policy = new AuthorizationPolicyBuilder()
+    .RequireAuthenticatedUser().Build();
+
+});
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Login/LoginUser/";
+    options.AccessDeniedPath = "/Login/AccessDenied/";
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+    options.Cookie.HttpOnly = true;
+});
 
 var app = builder.Build();
 

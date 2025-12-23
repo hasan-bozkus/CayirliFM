@@ -1,4 +1,5 @@
 ﻿using CayirliFM.BusinessLayer.Abstract;
+using CayirliFM.DataAccessLayer.Abstarct;
 using CayirliFM.EntityLayer.Contrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace CayirliFM.BusinessLayer.Concrete
 {
     public class EmployeeManager : IEmployeeService
     {
+        private readonly IEmployeeDal _employeeDal;
+
+        public EmployeeManager(IEmployeeDal employeeDal)
+        {
+            _employeeDal = employeeDal;
+        }
+
         public void TCraete(Employee t)
         {
-            throw new NotImplementedException();
+            _employeeDal.Craete(t);
         }
 
         public void TDelete(Employee t)
         {
-            throw new NotImplementedException();
+            _employeeDal.Delete(t); 
         }
 
-        public Task<Employee> TGetById(int id)
+        public async Task<Employee> TGetById(int id)
         {
-            throw new NotImplementedException();
+            return await _employeeDal.GetById(id);
         }
 
         public Task<List<Employee>> TGetListAll()
         {
-            throw new NotImplementedException();
+            return _employeeDal.GetListAll();
         }
 
         public void TUpdate(Employee t)
         {
-            throw new NotImplementedException();
+            _employeeDal.Update(t);
         }
     }
 }
