@@ -9,6 +9,7 @@ using CayirliFM.EntityLayer.Contrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -65,6 +66,7 @@ builder.Services.AddControllersWithViews(config =>
     var policy = new AuthorizationPolicyBuilder()
     .RequireAuthenticatedUser().Build();
 
+    config.Filters.Add(new AuthorizeFilter(policy));
 });
 
 builder.Services.ConfigureApplicationCookie(options =>
@@ -92,13 +94,9 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllerRoute(
-      name: "areas",
-      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-    );
-});
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",
