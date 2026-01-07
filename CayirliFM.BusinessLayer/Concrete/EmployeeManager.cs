@@ -33,6 +33,11 @@ namespace CayirliFM.BusinessLayer.Concrete
             return await _employeeDal.GetById(id);
         }
 
+        public async Task<Employee> TGetEmployeeWithUserAsync(int appUserId)
+        {
+            return await _employeeDal.GetEmployeeWithUserAsync(appUserId);
+        }
+
         public Task<List<Employee>> TGetListAll()
         {
             return _employeeDal.GetListAll();

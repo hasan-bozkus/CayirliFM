@@ -9,5 +9,6 @@ namespace CayirliFM.BusinessLayer.Abstract
 {
     public interface IEmployeeService : IGenericService<Employee>
     {
+        Task<Employee> TGetEmployeeWithUserAsync(int appUserId);
     }
 }

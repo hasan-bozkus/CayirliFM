@@ -9,5 +9,6 @@ namespace CayirliFM.DataAccessLayer.Abstarct
 {
     public interface IEmployeeDal : IGenericDal<Employee>
     {
+        Task<Employee> GetEmployeeWithUserAsync(int appUserId);
     }
 }

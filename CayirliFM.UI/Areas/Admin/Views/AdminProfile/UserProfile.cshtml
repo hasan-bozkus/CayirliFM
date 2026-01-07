@@ -1,0 +1,92 @@
+﻿@model UpdateAppUserDto
+@{
+    ViewData["Title"] = "UserProfile";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-12 col-xxl-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Personel Profili</h4>
+                </div>
+                <div class="card-body">
+                    <div class="basic-form">
+                        <form method="post">
+
+                            <input type="hidden" asp-for="AppUserId" />
+                            <input type="hidden" asp-for="EmployeeID" />
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Personel Adı</label>
+                                    <input type="text" asp-for="Name" disabled class="form-control" placeholder="Personel Adı">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Personel Soyadı</label>
+                                    <input type="text" asp-for="Surname" disabled class="form-control" placeholder="Personel Soyadı">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Personel Kullanıcı Adı</label>
+                                    <input type="text" asp-for="UserName" disabled class="form-control" placeholder="Kullanıcı Adı">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>E-Posta Adresi</label>
+                                    <input type="text" asp-for="EMail" class="form-control" placeholder="E-Posta Adresi">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Telefon Numarası</label>
+                                    <input type="text" asp-for="Phone" class="form-control" placeholder="Telefon Numarası">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Kurum E-Posta Adersi</label>
+                                    <input type="text" asp-for="EmployeeEMail" class="form-control" placeholder="Kurum E-Posta Adresi">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Facebook Hesabı</label>
+                                    <input type="text" asp-for="EmployeeFacebook" class="form-control" placeholder="Facebook Hesabı">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Instagram Hesabı</label>
+                                    <input type="text" asp-for="EmployeeInstagram" class="form-control" placeholder="Instagram Hesabı">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>X (Twitter) Hesabı</label>
+                                    <input type="text" asp-for="EmployeeXTwitter" class="form-control" placeholder="X (Twitter) Hesabı">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Personel Hakkında</label>
+                                    <textarea type="text" asp-for="EmployeeAbout" class="form-control" rows="5" placeholder="Personel Hakkında"></textarea>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Parola</label>
+                                    <input type="password" asp-for="PasswordHash" class="form-control" placeholder="Parola">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Parola Tekrarı</label>
+                                    <input type="password" asp-for="ConfirmPasswordHash" class="form-control" placeholder="Parola Tekrarı">
+                                </div>
+
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Profili Güncelle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

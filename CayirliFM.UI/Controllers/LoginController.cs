@@ -37,7 +37,7 @@ namespace CayirliFM.UI.Controllers
             var result = await _signInManager.PasswordSignInAsync(user, createLoginAppUserDto.Password, false, false);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "AdminDashboard", new { areas = "Admin" });
+                return RedirectToAction("Index", "AdminDashboard", new { area = "Admin" });
             }
             else
             {
