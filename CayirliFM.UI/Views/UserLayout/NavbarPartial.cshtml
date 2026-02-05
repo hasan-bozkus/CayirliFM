@@ -1,19 +1,67 @@
 ﻿<div class="top-nav">
-	<span class="menu">Menü</span>
-	<ul class="w3l">
-		<li><a class="@(ViewBag.isActive == "Default"? "active" : "")" href="/Default/Index"><i aria-hidden="true" class="glyphicon glyphicon-home"></i><span>Ana Sayfa</span></a></li>
-		<li><a class="@(ViewBag.isActive == "Blog" ? "active" : "")" href="/Blog/Index"><i class="glyphicon glyphicon-user"></i><span>Haberler</span></a></li>
-		<li><a class="@(ViewBag.isActive == "RadioStream" ? "active" : "")" href="#"><i class="glyphicon glyphicon-list-alt"></i><span>Radyo Dinle</span></a></li>
-		<li><a class="@(ViewBag.isActive == "About" ? "active" : "")" href="/About/Index"><i class="glyphicon glyphicon-picture"></i><span>Hakkımızda</span></a></li>
-		<li><a class="@(ViewBag.isActive == "Contact" ? "active" : "")" href="/Contact/Index"><i class="glyphicon glyphicon-envelope"></i><span>İletişim</span></a></li>
-	</ul>
-	<!-- script-for-menu -->
-	<script>
-		$( "span.menu" ).click(function() {
-		  $( "ul.w3l" ).slideToggle( 300, function() {
-		  // Animation complete.
-		   });
-		  });
-	</script>
-	<!-- //script-for-menu -->
+    <span class="menu">Menü</span>
+    <ul class="w3l">
+        <li><a class="@(ViewBag.isActive == "Default" ? "active" : "")" href="/Default/Index"><i aria-hidden="true" class="glyphicon glyphicon-home"></i><span>Ana Sayfa</span></a></li>
+        <li><a class="@(ViewBag.isActive == "Blog" ? "active" : "")" href="/Blog/Index"><i class="glyphicon glyphicon-user"></i><span>Haberler</span></a></li>
+        <li><a id="btnListenRadio" class="@(ViewBag.isActive == "RadioStream" ? "active" : "")" href="#"><i class="glyphicon glyphicon-list-alt"></i><span>Radyo Dinle</span></a></li>
+        <li><a class="@(ViewBag.isActive == "About" ? "active" : "")" href="/About/Index"><i class="glyphicon glyphicon-picture"></i><span>Hakkımızda</span></a></li>
+        <li><a class="@(ViewBag.isActive == "Contact" ? "active" : "")" href="/Contact/Index"><i class="glyphicon glyphicon-envelope"></i><span>İletişim</span></a></li>
+    </ul>
+
+    <audio id="radio" style="display:none;"></audio>
+
+    <!-- script-for-menu -->
+    <script src="~/microsoft-signalr/signalr.min.js"></script>
+    <script>
+        $( "span.menu" ).click(function() {
+          $( "ul.w3l" ).slideToggle( 300, function() {
+          // Animation complete.
+           });
+          });
+
+            const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/musichub")
+            .withAutomaticReconnect() // Bağlantı koparsa otomatik bağlanır
+            .build();
+
+        const audio = document.getElementById("radio");
+        const btnListen = document.getElementById("btnListenRadio");
+
+        // "PlaySong" event'i geldiğinde ne olacak?
+        connection.on("PlaySong", (songUrl) => {
+            console.log("Yeni şarkı yayında:", songUrl);
+            audio.src = songUrl;
+
+            // Tarayıcı kısıtlamasını aşmak için play() sözü (promise) kontrol edilir
+            const playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.error("Otomatik oynatma engellendi. Kullanıcı etkileşimi gerekiyor:", error);
+                });
+            }
+        });
+
+        connection.on("StopSong", () => {
+            console.log("Yayın durduruldu.");
+            audio.pause();
+            audio.src = "";
+        });
+
+        // Butona tıklandığında bağlantıyı başlat ve audio'yu hazırla
+        btnListen.addEventListener("click", function() {
+            if (connection.state === "Disconnected") {
+                connection.start()
+                    .then(() => {
+                        console.log("SignalR Bağlantısı Kuruldu!");
+                        alert("Radyo yayınına bağlandınız. Yayın başladığında müzik çalacaktır.");
+                    })
+                    .catch(err => console.error("Bağlantı hatası: ", err.toString()));
+            } else {
+                console.log("Zaten bağlısınız.");
+            }
+        });
+
+
+    </script>
+    <!-- //script-for-menu -->
 </div>

@@ -6,6 +6,7 @@ using CayirliFM.DataAccessLayer.Concrete;
 using CayirliFM.DataAccessLayer.EntityFramework;
 using CayirliFM.DataAccessLayer.Repositories;
 using CayirliFM.EntityLayer.Contrete;
+using CayirliFM.UI.Hubs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -54,6 +55,12 @@ builder.Services.AddScoped<ICommentService, CommentManager>();
 builder.Services.AddScoped<IEmployeeDal, EfEmployeeRepository>();
 builder.Services.AddScoped<IEmployeeService, EmployeeManager>();
 
+builder.Services.AddScoped<IPlaylistDal, EfPlaylistRepository>();
+builder.Services.AddScoped<IPlaylistService, PlaylistManager>();
+
+builder.Services.AddScoped<IMusicDal, EfMusicRepository>();
+builder.Services.AddScoped<IMusicService, MusicManager>();
+
 builder.Services.AddHttpClient<IHuggingFaceService, HuggingFaceManager>();
 
 builder.Services.AddAutoMapper(typeof(Program));
@@ -76,6 +83,8 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
     options.Cookie.HttpOnly = true;
 });
+
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -101,5 +110,7 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Default}/{action=Index}/{id?}");
+
+app.MapHub<MusicHub>("/musichub");
 
 app.Run();

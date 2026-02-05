@@ -1,0 +1,41 @@
+﻿const connection = new signalR.HubConnectionBuilder()
+    .withUrl("/musichub")
+    .withAutomaticReconnect() // Bağlantı koparsa otomatik bağlanır
+    .build();
+
+const audio = document.getElementById("radio");
+const btnListen = document.getElementById("btnListenRadio");
+
+// "PlaySong" event'i geldiğinde ne olacak?
+connection.on("PlaySong", (songUrl) => {
+    console.log("Yeni şarkı yayında:", songUrl);
+    audio.src = songUrl;
+
+    // Tarayıcı kısıtlamasını aşmak için play() sözü (promise) kontrol edilir
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+        playPromise.catch(error => {
+            console.error("Otomatik oynatma engellendi. Kullanıcı etkileşimi gerekiyor:", error);
+        });
+    }
+});
+
+connection.on("StopSong", () => {
+    console.log("Yayın durduruldu.");
+    audio.pause();
+    audio.src = "";
+});
+
+// Butona tıklandığında bağlantıyı başlat ve audio'yu hazırla
+btnListen.addEventListener("click", function() {
+    if (connection.state === "Disconnected") {
+        connection.start()
+            .then(() => {
+                console.log("SignalR Bağlantısı Kuruldu!");
+                alert("Radyo yayınına bağlandınız. Yayın başladığında müzik çalacaktır.");
+            })
+            .catch(err => console.error("Bağlantı hatası: ", err.toString()));
+    } else {
+        console.log("Zaten bağlısınız.");
+    }
+});

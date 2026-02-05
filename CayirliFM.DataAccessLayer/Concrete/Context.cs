@@ -30,6 +30,7 @@ namespace CayirliFM.DataAccessLayer.Concrete
         public DbSet<WelcomeToOurSite> WelcomeToOurSites { get; set; }
         public DbSet<ReplyToContact> ReplyToContacts { get; set; }
         public DbSet<CategoryEvent> CategoryEvents { get; set; }
-
+        public DbSet<Playlist> Playlists { get; set; }
+        public DbSet<Music> Musics { get; set; }
     }
 }

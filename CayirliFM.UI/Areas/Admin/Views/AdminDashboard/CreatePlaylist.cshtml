@@ -1,0 +1,28 @@
+﻿@model CreatePlaylistDto
+@{
+    ViewData["Title"] = "CreatePlaylist";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-12 col-xxl-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Yeni Oynatma Listesi Ekle</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form method="post">
+                        <div class="form-group">
+                            <input type="text" asp-for="PlaylistName" class="form-control input-rounded " placeholder="Oynatma Listesi Başlığı">
+                        </div>
+                       
+                        <div class="form-group">
+                            <button class="btn btn-outline-primary">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

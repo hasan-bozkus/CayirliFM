@@ -2,6 +2,7 @@
 using CayirliFM.DtoLayer.Dtos.AddressDtos;
 using CayirliFM.DtoLayer.Dtos.CategoryEventDtos;
 using CayirliFM.DtoLayer.Dtos.ContactDtos;
+using CayirliFM.DtoLayer.Dtos.DashboardDto;
 using CayirliFM.DtoLayer.Dtos.EventDtos;
 using CayirliFM.DtoLayer.Dtos.NewsDtos;
 using CayirliFM.DtoLayer.Dtos.SocialMediaAccountsDtos;
@@ -49,6 +50,10 @@ namespace CayirliFM.UI.Map
             CreateMap<CategoryEvent, UpdateCategoryEventDto>().ReverseMap();
 
             CreateMap<News, ResultLast4NewsDto>().ReverseMap();
+
+            CreateMap<Playlist, ResultPlaylistDto>().ReverseMap();
+            CreateMap<Playlist, CreatePlaylistDto>().ReverseMap();
+            CreateMap<Music, ResultMusicDto>().ReverseMap();
         }
     }
 }

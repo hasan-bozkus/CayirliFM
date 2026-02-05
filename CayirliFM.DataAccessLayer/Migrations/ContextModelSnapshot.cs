@@ -396,6 +396,32 @@ namespace CayirliFM.DataAccessLayer.Migrations
                     b.ToTable("Events");
                 });
 
+            modelBuilder.Entity("CayirliFM.EntityLayer.Contrete.Music", b =>
+                {
+                    b.Property<int>("MusicID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MusicID"));
+
+                    b.Property<string>("MusicName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MusicPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PlaylistID")
+                        .HasColumnType("int");
+
+                    b.HasKey("MusicID");
+
+                    b.HasIndex("PlaylistID");
+
+                    b.ToTable("Musics");
+                });
+
             modelBuilder.Entity("CayirliFM.EntityLayer.Contrete.News", b =>
                 {
                     b.Property<int>("NewsID")
@@ -447,6 +473,23 @@ namespace CayirliFM.DataAccessLayer.Migrations
                     b.HasIndex("EmployeeID");
 
                     b.ToTable("News");
+                });
+
+            modelBuilder.Entity("CayirliFM.EntityLayer.Contrete.Playlist", b =>
+                {
+                    b.Property<int>("PlaylistID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PlaylistID"));
+
+                    b.Property<string>("PlaylistName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PlaylistID");
+
+                    b.ToTable("Playlists");
                 });
 
             modelBuilder.Entity("CayirliFM.EntityLayer.Contrete.ReplyToContact", b =>
@@ -725,6 +768,17 @@ namespace CayirliFM.DataAccessLayer.Migrations
                     b.Navigation("AppUser");
                 });
 
+            modelBuilder.Entity("CayirliFM.EntityLayer.Contrete.Music", b =>
+                {
+                    b.HasOne("CayirliFM.EntityLayer.Contrete.Playlist", "Playlist")
+                        .WithMany("Musics")
+                        .HasForeignKey("PlaylistID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Playlist");
+                });
+
             modelBuilder.Entity("CayirliFM.EntityLayer.Contrete.News", b =>
                 {
                     b.HasOne("CayirliFM.EntityLayer.Contrete.Category", "Category")
@@ -806,6 +860,11 @@ namespace CayirliFM.DataAccessLayer.Migrations
             modelBuilder.Entity("CayirliFM.EntityLayer.Contrete.News", b =>
                 {
                     b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("CayirliFM.EntityLayer.Contrete.Playlist", b =>
+                {
+                    b.Navigation("Musics");
                 });
 #pragma warning restore 612, 618
         }
