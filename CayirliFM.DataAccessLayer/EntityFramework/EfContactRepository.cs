@@ -25,5 +25,14 @@ namespace CayirliFM.DataAccessLayer.EntityFramework
                 return values;
             }
         }
+
+        public async Task<int> GetContactCountAsync()
+        {
+            using(var context = new Context())
+            {
+                var value = await context.Contacts.Where(x => x.Status == true).CountAsync();
+                return value;
+            }
+        }
     }
 }

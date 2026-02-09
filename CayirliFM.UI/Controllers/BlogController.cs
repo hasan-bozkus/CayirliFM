@@ -1,6 +1,7 @@
 ﻿using CayirliFM.BusinessLayer.Abstract;
 using CayirliFM.BusinessLayer.External;
 using CayirliFM.EntityLayer.Contrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using X.PagedList;
@@ -8,6 +9,7 @@ using X.PagedList.Extensions;
 
 namespace CayirliFM.UI.Controllers
 {
+    [AllowAnonymous]
     public class BlogController : Controller
     {
         private readonly INewsService _newsService;

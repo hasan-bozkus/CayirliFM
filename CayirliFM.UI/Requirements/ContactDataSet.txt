@@ -1,0 +1,42 @@
+﻿INSERT INTO [FMCayirli].[dbo].[Contacts] 
+([ContactName], [ContactSurname], [EMail], [Phone], [ContactSubject], [ContactMessage], [ContactCreateAtTime], [Status])
+VALUES 
+-- 1. Reklam Teklifi
+('Ahmet', 'Yılmaz', 'ahmet.yilmaz@sirketim.com', '05321112233', 'Reklam Ortaklığı Hakkında', 
+'Merhabalar, yerel bir işletme sahibiyim. Radyonuzun öğle kuşağında reklamlarımızı yayınlatmak istiyoruz. Fiyat listenizi gönderebilir misiniz?', GETDATE(), 1),
+
+-- 2. Şarkı İsteği ve Teşekkür
+('Ayşe', 'Demir', 'ayse.demir@gmail.com', '05443334455', 'Şarkı İsteği', 
+'Hafta içi her sabah işe giderken sizi dinliyorum, enerjiniz harika! Mümkünse Erkin Koray''dan bir parça çalabilir misiniz? Teşekkürler Çayırlı FM!', GETDATE(), 1),
+
+-- 3. Teknik Destek / Yayın Sorunu
+('Can', 'Öztürk', 'can.ozturk@provider.com', '05056667788', 'Mobil Uygulama Sorunu', 
+'İyi günler, iOS uygulaması üzerinden yayın dinlerken sık sık kopmalar yaşıyorum. İnternet bağlantım stabil ama uygulamada bir sorun olabilir mi? Bilginize.', GETDATE(), 1),
+
+-- 4. Staj Başvuru
+('Merve', 'Kaya', 'merve.kaya@universite.edu.tr', '05552223344', 'Staj Başvurusu', 
+'İletişim fakültesi 3. sınıf öğrencisiyim. Yaz dönemi için radyonuzun teknik mutfağında veya program departmanında staj yapmak istiyorum. CV''mi nereye gönderebilim?', GETDATE(), 1),
+
+-- 5. Canlı Yayın Konuk Talebi
+('Murat', 'Aras', 'info@muzikgrubu.com', '05337778899', 'Konuk Sanatçı Talebi', 
+'Yeni albüm lansmanımız için Çayırlı FM stüdyolarında canlı performans sergilemek istiyoruz. Uygun olduğunuz bir tarih varsa görüşmek isteriz.', GETDATE(), 1),
+
+-- 6. Öneri / Feedback
+('Selin', 'Yıldız', 'selin.yildiz@mail.com', '05429990011', 'Program Önerisi', 
+'Gece kuşağında daha fazla caz ve blues parçalarına yer verebilir misiniz? Sitenizdeki takvim harika görünüyor, içerik kalitesi çok yüksek.', GETDATE(), 1),
+
+-- 7. Yarışma Katılımı
+('Hakan', 'Çelik', 'hakan.celik@test.com', '05304445566', 'Yarışma Katılımı', 
+'Az önce yayında sorduğunuz bilmecenin cevabını vermek için yazıyorum. Sanırım cevap "Radyo Dalgaları". Umarım ödülü kazanırım!', GETDATE(), 1),
+
+-- 8. Sponsorluk Görüşmesi
+('Bülent', 'Ece', 'kurumsal@festivalevents.com', '05315556677', 'Festival Sponsorluğu', 
+'Önümüzdeki ay düzenleyeceğimiz Gençlik Festivali için Çayırlı FM''i ana medya sponsoru olarak görmek istiyoruz. Detayları görüşmek üzere randevu rica ediyorum.', GETDATE(), 1),
+
+-- 9. Hatalı Bilgi Bildirimi
+('Deniz', 'Soydan', 'deniz.soydan@abc.com', '05412221100', 'Web Sitesi Bilgi Güncellemesi', 
+'İletişim sayfasındaki adres tarifinde bir hata var sanırım, bina numarası 12 değil 14 olarak görünüyor. Düzeltmenizi rica ederim.', GETDATE(), 1),
+
+-- 10. Genel Teşekkür (SignalR testi için ideal kısa mesaj)
+('Ebru', 'Güneş', 'ebru.gunes@example.com', '05517776655', 'Sadece Teşekkür', 
+'Böyle kaliteli bir yazılım projesini ve radyo yayınını bizlere sunduğunuz için teşekkürler. Başarılarınızın devamını dilerim!', GETDATE(), 1);

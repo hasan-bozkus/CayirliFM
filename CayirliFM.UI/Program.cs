@@ -112,5 +112,6 @@ app.MapControllerRoute(
     pattern: "{controller=Default}/{action=Index}/{id?}");
 
 app.MapHub<MusicHub>("/musichub");
+app.MapHub<ContactHub>("/contacthub");
 
 app.Run();

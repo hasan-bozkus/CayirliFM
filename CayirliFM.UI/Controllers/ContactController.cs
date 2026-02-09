@@ -1,10 +1,12 @@
 ﻿using CayirliFM.BusinessLayer.Abstract;
 using CayirliFM.EntityLayer.Contrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace CayirliFM.UI.Controllers
 {
+    [AllowAnonymous]
     public class ContactController : Controller
     {
         private readonly IContactService _contactService;

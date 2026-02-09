@@ -18,6 +18,11 @@ namespace CayirliFM.BusinessLayer.Concrete
             _contactDal = contactDal;
         }
 
+        public async Task<int> TGetContactCountAsync()
+        {
+            return await _contactDal.GetContactCountAsync();
+        }
+
         public async Task<List<Contact>> TContactListOrdByDescAsync()
         {
             return await _contactDal.ContactListOrdByDescAsync();

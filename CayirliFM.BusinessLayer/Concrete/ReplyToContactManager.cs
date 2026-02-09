@@ -44,6 +44,11 @@ namespace CayirliFM.BusinessLayer.Concrete
             return await _replyToContactDal.GetReplyToContact(id);
         }
 
+        public async Task<int> TGetReplyToContactCountAsync()
+        {
+            return await _replyToContactDal.GetReplyToContactCountAsync();
+        }
+
         public async Task<List<ResultReplyToContactWithDescDto>> TGetReplyToContactsWithDesc()
         {
             return await _replyToContactDal.GetReplyToContactsWithDesc();

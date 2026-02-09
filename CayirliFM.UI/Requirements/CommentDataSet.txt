@@ -1,0 +1,32 @@
+﻿INSERT INTO [FMCayirli].[dbo].[Comments] 
+([NameSurname], [EMail], [Message], [CommentCreateAtTime], [Status], [NewsID], [IsToxic], [ToxicityScore])
+VALUES 
+-- 1. 90'lar Pop Haberiyle Alakalı (NewsID: 19 civarı varsayımıyla)
+('Mustafa Kemal', 'm.kemal@mail.com', '90''lar pop rüzgarı gerçekten harika bir fikir! Tarkan''ın eski şarkılarını yüksek kalitede dinlemek çocukluğuma götürdü beni. Programı heyecanla bekliyorum.', GETDATE(), 1, 19, 0, 0),
+
+-- 2. Hi-Fi Yayıncılık Haberiyle Alakalı
+('Levent Arı', 'levent.ari@hifi.com', 'Hi-Fi yayıncılık teknolojisi yerel bir radyo için devrim niteliğinde. Kulaklıkla dinlerken derinliği hissedebiliyorum. Tebrikler Çayırlı FM!', GETDATE(), 1, 20, 0, 0),
+
+-- 3. Genç Yıldızlar Yarışmasıyla Alakalı
+('Sibel Canan', 'sibel.canan@muzik.org', 'Yarışmaya başvurumu az önce tamamladım. Amatör müzisyenlere böyle bir kapı açmanız çok değerli. Umarım şans yanımda olur!', GETDATE(), 1, 21, 0, 0),
+
+-- 4. Caz Geceleriyle Alakalı
+('Oktay Usta', 'oktay.usta@cazsever.net', 'Cuma akşamları vazgeçilmezim oldu bu program. John Miller röportajı çok ufuk açıcıydı. Müzik kaliteniz gerçekten çok üst segment.', GETDATE(), 1, 22, 0, 0),
+
+-- 5. Podcast Serisiyle Alakalı
+('Yazılımcı Mert', 'mert.dev@software.com', '"Kod Yazarken Dinlenecekler" podcast serisi efsane olmuş. Akşama kadar backend yazarken arka planda çok iyi gidiyor, devamını bekliyoruz.', GETDATE(), 1, 23, 0, 0),
+
+-- 6. Doğa Festivali Haberiyle Alakalı
+('Doğa Dostu Elif', 'elif.yesil@dogamiz.com', 'Sürdürülebilir festival fikrine bayıldım. Hem müzik dinleyip hem fidan dikimine katkıda bulunmak harika. Biletlerimi şimdiden aldım.', GETDATE(), 1, 24, 0, 0),
+
+-- 7. Radyo Tiyatrosuyla Alakalı
+('Emre Bulut', 'emre.bulut@edebiyat.com', 'Radyo tiyatrosu geleneğini yaşatmanız çok anlamlı. Akşam yatağa yattığımızda gözlerimizi kapatıp o atmosferi yaşamak paha biçilemez.', GETDATE(), 1, 25, 0, 0),
+
+-- 8. Elektronik Müzik Haberiyle Alakalı
+('DJ Shadow', 'shadow@djworld.com', 'Elektronik müziğin evrimi üzerine hazırlanan makale çok detaylı olmuş. Synth-pop kısmındaki teknik bilgiler çok doğru. Emeğinize sağlık.', GETDATE(), 1, 35, 0, 0),
+
+-- 9. Müzik ve Psikoloji Haberiyle Alakalı
+('Dr. Selen', 'selen.psikolog@hastane.com', 'Notaların zihin üzerindeki etkisiyle ilgili verdiğiniz bilgiler bilimsel olarak da çok tutarlı. Çok bilgilendirici bir içerik olmuş.', GETDATE(), 1, 26, 0, 0),
+
+-- 10. Ödül Haberi / Final Haberiyle Alakalı
+('Hasan Çayırlı', 'admin@fmcayirli.com', 'Yılın radyosu ödülü sonuna kadar hak edilmiş bir başarı. Kaliteli yayıncılığın adresi olduğunuzu bir kez daha kanıtladınız.', GETDATE(), 1, 39, 0, 0);

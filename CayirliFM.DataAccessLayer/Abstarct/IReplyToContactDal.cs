@@ -13,5 +13,6 @@ namespace CayirliFM.DataAccessLayer.Abstarct
         Task ReplyToContactForContactRequest(ReplyToContact replyToContact);
         Task<List<ResultReplyToContactWithDescDto>> GetReplyToContactsWithDesc();
         Task<ResultGetReplyToContactDto> GetReplyToContact(int id);
+        Task<int> GetReplyToContactCountAsync();
     }
 }

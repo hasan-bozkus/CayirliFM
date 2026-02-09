@@ -13,5 +13,6 @@ namespace CayirliFM.BusinessLayer.Abstract
         Task TReplyToContactForContactRequest(ReplyToContact replyToContact);
         Task<List<ResultReplyToContactWithDescDto>> TGetReplyToContactsWithDesc();
         Task<ResultGetReplyToContactDto> TGetReplyToContact(int id);
+        Task<int> TGetReplyToContactCountAsync();
     }
 }

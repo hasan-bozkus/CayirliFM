@@ -1,13 +1,40 @@
-﻿    <div class="p-0">
+﻿
+<script src="~/microsoft-signalr/signalr.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(() => {
+
+    var connection = new signalR.HubConnectionBuilder().withUrl("/contacthub").build();
+
+    connection.start().then(() => {
+        setInterval(() => {
+                connection.invoke("ContactProcess");
+        }, 5000);
+    });
+
+            connection.on("GetContactRequestCount", (getContactRequestCount) => {
+                        $("#getContactRequestCount").text(getContactRequestCount);
+            });
+
+             connection.on("GetReplyToContactCount", (getReplyToContactCount) => {
+                  $("#getReplyToContactCount").text(getReplyToContactCount);
+            });
+
+});  
+</script>
+
+<div class="p-0">
         <a href="email-compose.html" class="btn btn-primary btn-block">Oluştur</a>
     </div>
     <div class="mail-list mt-4">
         <a href="email-inbox.html" class="list-group-item active">
-            <i class="fa fa-inbox font-18 align-middle mr-2"></i> Birincil <span class="badge badge-primary badge-sm float-right">198</span>
+        <i class="fa fa-inbox font-18 align-middle mr-2"></i> Birincil <span class="badge badge-primary badge-sm float-right" id="getContactRequestCount"></span>
         </a>
         <a href="javascript:void()" class="list-group-item">
-            <i class="fa fa-paper-plane font-18 align-middle mr-2"></i>Gönderilen
-        </a> <a href="javascript:void()" class="list-group-item">
+        <i class="fa fa-paper-plane font-18 align-middle mr-2"></i>Gönderilen <span class="badge badge-warning badge-sm float-right" id="getReplyToContactCount"></span>
+        </a> 
+        <a href="javascript:void()" class="list-group-item">
             <i class="fa fa-star font-18 align-middle mr-2"></i>Önemli <span class="badge badge-danger text-white badge-sm float-right">47</span>
         </a>
         <a href="javascript:void()" class="list-group-item">

@@ -1,0 +1,20 @@
+﻿INSERT INTO [FMCayirli].[dbo].[WelcomeToOurSites] 
+(
+    [Title], 
+    [Description], 
+    [NewsAlbumImageUrl], 
+    [NewsAlbumDescription], 
+    [WiseSaysingImageUrl], 
+    [WiseSaysingDescription], 
+    [Status]
+)
+VALUES 
+(
+    'Müziğin Kalbi, Şehrin En Doğal Frekansı: Çayırlı FM', 
+    'Çayırlı FM olarak, 7 gün 24 saat kesintisiz müzik ve tarafsız yayıncılık ilkesiyle kulaklarınıza misafir oluyoruz. En güncel hit parçalardan unutulmaz nostalji rüzgarlarına, kültür-sanat programlarından canlı spor yayınlarına kadar zengin içerik yelpazemizle dijital yayıncılıkta yeni bir standart belirliyoruz. Bizi sadece bir radyo değil, günün her anında yanınızda olan bir yol arkadaşı olarak görebilirsiniz.', 
+    'latest-album-cover.jpg', 
+    'Haftanın Albümü: Anadolu Rock serisinin en özel kayıtları dijital remaster kalitesiyle yayında.', 
+    'radio-wisdom.png', 
+    '“Müzik, kelimelerin bittiği yerde başlar; radyo ise o müziği herkese ulaştıran en samimi köprüdür.”', 
+    1
+);

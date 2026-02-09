@@ -1,0 +1,23 @@
+﻿INSERT INTO [FMCayirli].[dbo].[Events] 
+([EventStartDate], [EventTitle], [EventColor], [Status], [EventEndDate])
+VALUES 
+-- Haftalık Programlar ve Konserler
+('2026-03-02 09:00:00', 'Mart Ayı Lansman Toplantısı', 'bg-dark', 1, '2026-03-02 11:00:00'),
+('2026-03-05 20:00:00', 'Akustik Gece: Yerel Gruplar', 'bg-primary', 1, '2026-03-05 23:30:00'),
+('2026-03-08 10:00:00', 'Dünya Kadınlar Günü Özel Yayını', 'bg-danger', 1, '2026-03-08 22:00:00'),
+('2026-03-10 14:00:00', 'DJ Workshop: Genç Yetenekler', 'bg-info', 1, '2026-03-10 18:00:00'),
+('2026-03-12 21:00:00', '90lar Pop Partisi (Canlı)', 'bg-secondary', 1, '2026-03-13 01:00:00'),
+
+-- Ay Ortası Etkinlikleri
+('2026-03-15 13:00:00', 'İmza Günü: Konuk Sanatçı X', 'bg-success', 1, '2026-03-15 16:00:00'),
+('2026-03-17 19:00:00', 'Caz ve Şiir Dinletisi', 'bg-primary', 1, '2026-03-17 21:00:00'),
+('2026-03-20 15:00:00', 'Radyo Teknik Altyapı Bakımı', 'bg-warning', 1, '2026-03-20 17:00:00'),
+('2026-03-21 20:00:00', 'Baharın Gelişi: Büyük Konser', 'bg-danger', 1, '2026-03-21 23:59:00'),
+('2026-03-23 08:00:00', 'Yeni Yayın Dönemi Başlangıcı', 'bg-info', 1, '2026-03-23 10:00:00'),
+
+-- Ay Sonu Kapanış
+('2026-03-25 18:00:00', 'Dinleyici Buluşması ve Kokteyl', 'bg-dark', 1, '2026-03-25 21:00:00'),
+('2026-03-27 22:00:00', 'Elektronik Müzik Gecesi', 'bg-primary', 1, '2026-03-28 04:00:00'),
+('2026-03-29 11:00:00', 'Pazar Kahvaltısı: Canlı İstekler', 'bg-secondary', 1, '2026-03-29 14:00:00'),
+('2026-03-30 16:00:00', 'Ayın En İyileri Ödül Töreni', 'bg-success', 1, '2026-03-30 18:00:00'),
+('2026-03-31 23:00:00', 'Mart Ayı Kapanış Seti', 'bg-info', 1, '2026-04-01 01:00:00');

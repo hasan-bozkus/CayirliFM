@@ -36,6 +36,15 @@ namespace CayirliFM.DataAccessLayer.EntityFramework
             }
         }
 
+        public async Task<int> GetReplyToContactCountAsync()
+        {
+            using (var context = new Context())
+            {
+                var value = await context.ReplyToContacts.CountAsync();
+                return value;
+            }
+        }
+
         public async Task<List<ResultReplyToContactWithDescDto>> GetReplyToContactsWithDesc()
         {
             using (var context = new Context())

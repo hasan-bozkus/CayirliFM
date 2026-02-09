@@ -20,13 +20,13 @@
                     <h5> @item.NewsCreatedAtTime.ToString("dd MMMM yyyy") </h5>
                 </div>
                 <div class="albums-left">
-                    <a href="/Blog/NewsReadAll/@item.NewsID" class="wthree-almub">
+                    <a href="/Blog/NewsReadAll/@item.NewsID" style="background:url(@item.NewsSubImage)no-repeat center; background-size:cover;" class="wthree-almub">
                     </a>
                 </div>
                 <div class="albums-right">
                     <h4><a href="/Blog/NewsReadAll/@item.NewsID">@item.NewsTitle</a></h4>
                     <p>@item.NewsSubDescrpition.</p>
-                    <a class="w3more" href="single.html"><i class="fa fa-mail-forward" aria-hidden="true"></i> Devamını Oku</a>
+                    <a class="w3more" href="/Blog/NewsReadAll/@item.NewsID"><i class="fa fa-mail-forward" aria-hidden="true"></i> Devamını Oku</a>
                 </div>
                 <div class="clearfix"></div>
             </div>

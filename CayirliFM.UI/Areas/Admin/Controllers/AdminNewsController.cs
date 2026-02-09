@@ -1,7 +1,9 @@
 ﻿using CayirliFM.BusinessLayer.Abstract;
 using CayirliFM.EntityLayer.Contrete;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Threading.Tasks;
 
 namespace CayirliFM.UI.Areas.Admin.Controllers
 {
@@ -10,11 +12,15 @@ namespace CayirliFM.UI.Areas.Admin.Controllers
     {
         private readonly INewsService _newsService;
         private readonly ICategoryService _categoryService;
+        private readonly IEmployeeService _employeeService;
+        private readonly UserManager<AppUser> _userManager;
 
-        public AdminNewsController(INewsService newsService, ICategoryService categoryService)
+        public AdminNewsController(INewsService newsService, ICategoryService categoryService, IEmployeeService employeeService, UserManager<AppUser> userManager)
         {
             _newsService = newsService;
             _categoryService = categoryService;
+            _employeeService = employeeService;
+            _userManager = userManager;
         }
 
         public async Task<IActionResult> Index()
@@ -39,12 +45,17 @@ namespace CayirliFM.UI.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateNews(News news)
+        public async Task<IActionResult> CreateNews(News news)
         {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            var userId = user.Id;
+
+            var employeeId = await _employeeService.TGetEmployeeWithUserAsync(userId);
+
             news.NewsCreatedAtTime = DateTime.Parse(DateTime.Now.ToString());
             news.NewsUpdatedAtTime = DateTime.Parse(DateTime.Now.ToString());
             news.NewsStatus = "Onay Bekliyor";
-            news.EmployeeID = 1;
+            news.EmployeeID = employeeId.EmployeeID;
             _newsService.TCraete(news);
             return RedirectToAction("Index");
         }
@@ -72,11 +83,16 @@ namespace CayirliFM.UI.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateNews(News news)
+        public async Task<IActionResult> UpdateNews(News news)
         {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            var userId = user.Id;
+
+            var employeeId = await _employeeService.TGetEmployeeWithUserAsync(userId);
+
             news.NewsUpdatedAtTime = DateTime.Parse(DateTime.Now.ToString());
             news.NewsStatus = "Onay Bekliyor";
-            news.EmployeeID = 1;
+            news.EmployeeID = employeeId.EmployeeID;
             _newsService.TUpdate(news);
             return RedirectToAction("Index");
         }

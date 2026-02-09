@@ -1,0 +1,14 @@
+﻿INSERT INTO [FMCayirli].[dbo].[SocialMediaAccounts] 
+([Icon], [SocialMediaName], [SocialMediaUrl], [SocialMediaCreateAtTime])
+VALUES 
+-- 1. X (Eski adıyla Twitter)
+('fa fa-twitter', 'X (Twitter)', 'https://x.com/fmcayirli', GETDATE()),
+
+-- 2. Instagram
+('fa fa-instagram', 'Instagram', 'https://instagram.com/fmcayirli', GETDATE()),
+
+-- 3. LinkedIn
+('fa fa-linkedin', 'LinkedIn', 'https://linkedin.com/in/hasancayirli', GETDATE()),
+
+-- 4. Next Sosyal (Özel Yerel Ağ/Paylaşım İkonu ile)
+('fa fa-link', 'Next Sosyal', 'https://nextsosyal.com/fmcayirli', GETDATE());
