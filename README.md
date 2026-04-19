@@ -8,7 +8,7 @@
 > You can access the 100-video training series by clicking on the image above.
 
 
-# Cayirli FM Web Radio - Music Player & Management System
+# Cayirli FM Web Radio - Music Player & Management System (Premium / Coming soon to Envato Market)
 
 Cayirli FM is a professional, music player management system built with **ASP.NET Core 7.0** and **N-Tier Architecture**. Designed for seamless music station management, podcast hosting, and listener engagement.
 
