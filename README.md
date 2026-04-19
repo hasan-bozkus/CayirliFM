@@ -15,7 +15,7 @@ Cayirli FM is a professional, music player management system built with **ASP.NE
 
 ## 🌐 Çayırlı FM V2.0.0 Canlı (Live) - Demo
 
- [![Live Demo](https://img.shields.io/badge/Canl%C4%B1%20Demo-V2%20Professional-blue?style=for-the-badge&logo=internet-explorer)](https://cayirlifm.hasanbozkus.com.tr)
+ [![Live Demo](https://img.shields.io/badge/Live%20Demo-V2%20Professional-blue?style=for-the-badge&logo=internet-explorer)](https://cayirlifm.hasanbozkus.com.tr)
 
 ## 🚀 Key Features
 * **Music and Player Management:** Add unlimited categories and tracks, create customized playlists.
