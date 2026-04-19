@@ -13,9 +13,9 @@
 Cayirli FM is a professional, music player management system built with **ASP.NET Core 7.0** and **N-Tier Architecture**. Designed for seamless music station management, podcast hosting, and listener engagement.
 
 
-## 🌐 Çayırlı FM V2.0.0 Canlı - Demo
+## 🌐 Çayırlı FM V2.0.0 Canlı (Live) - Demo
 
- [![Canlı Demo](https://img.shields.io/badge/Canl%C4%B1%20Demo-V2%20Professional-blue?style=for-the-badge&logo=internet-explorer)](https://cayirlifm.hasanbozkus.com.tr)
+ [![Live Demo](https://img.shields.io/badge/Canl%C4%B1%20Demo-V2%20Professional-blue?style=for-the-badge&logo=internet-explorer)](https://cayirlifm.hasanbozkus.com.tr)
 
 ## 🚀 Key Features
 * **Music and Player Management:** Add unlimited categories and tracks, create customized playlists.
